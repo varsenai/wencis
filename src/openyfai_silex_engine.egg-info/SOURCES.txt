@@ -1,0 +1,6 @@
+pyproject.toml
+src/openyfai_silex_engine.egg-info/PKG-INFO
+src/openyfai_silex_engine.egg-info/SOURCES.txt
+src/openyfai_silex_engine.egg-info/dependency_links.txt
+src/openyfai_silex_engine.egg-info/requires.txt
+src/openyfai_silex_engine.egg-info/top_level.txt

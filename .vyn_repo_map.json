@@ -1,0 +1,4497 @@
+{
+  "src\\aria\\__init__.py": {
+    "sha256": "322ac63b3fa99be13fac0b54b1bfc8ed8ffd6f0531baf6ffca7207062d356887",
+    "symbols": []
+  },
+  "src\\aria\\core\\benchmark.py": {
+    "sha256": "cd59dd2c3c1d6225965aee1b67866e2a793f5f743182e613f4d46adb6bb1a4dc",
+    "symbols": [
+      {
+        "name": "BenchmarkRunner",
+        "type": "class",
+        "signature": "class BenchmarkRunner:",
+        "start_line": 85,
+        "end_line": 224
+      },
+      {
+        "name": "BenchmarkRunner.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm_client: SupportsLLM, db: Database):",
+        "start_line": 88,
+        "end_line": 90
+      },
+      {
+        "name": "BenchmarkRunner.run",
+        "type": "method",
+        "signature": "async def run(",
+        "start_line": 92,
+        "end_line": 180
+      },
+      {
+        "name": "BenchmarkRunner.get_history",
+        "type": "method",
+        "signature": "async def get_history(self) -> list[BenchmarkResult]:",
+        "start_line": 182,
+        "end_line": 199
+      },
+      {
+        "name": "BenchmarkRunner._judge_response",
+        "type": "method",
+        "signature": "async def _judge_response(",
+        "start_line": 201,
+        "end_line": 224
+      }
+    ]
+  },
+  "src\\aria\\core\\cognitive_loop.py": {
+    "sha256": "70f8f3766df38d7713bdc9817134c109525df87bdca152c7656673e3e733371e",
+    "symbols": [
+      {
+        "name": "CognitiveLoop",
+        "type": "class",
+        "signature": "class CognitiveLoop:",
+        "start_line": 81,
+        "end_line": 1583
+      },
+      {
+        "name": "CognitiveLoop.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 89,
+        "end_line": 173
+      },
+      {
+        "name": "CognitiveLoop.startup",
+        "type": "method",
+        "signature": "async def startup(self, target_query: str | None = None) -> None:",
+        "start_line": 179,
+        "end_line": 208
+      },
+      {
+        "name": "CognitiveLoop.shutdown",
+        "type": "method",
+        "signature": "async def shutdown(self) -> None:",
+        "start_line": 210,
+        "end_line": 216
+      },
+      {
+        "name": "CognitiveLoop.recover_checkpoints",
+        "type": "method",
+        "signature": "async def recover_checkpoints(self) -> list[dict]:",
+        "start_line": 218,
+        "end_line": 233
+      },
+      {
+        "name": "CognitiveLoop.tick",
+        "type": "method",
+        "signature": "async def tick(self) -> None:",
+        "start_line": 235,
+        "end_line": 277
+      },
+      {
+        "name": "CognitiveLoop.process",
+        "type": "method",
+        "signature": "async def process(",
+        "start_line": 283,
+        "end_line": 719
+      },
+      {
+        "name": "CognitiveLoop._check_reasoning_consistency",
+        "type": "method",
+        "signature": "async def _check_reasoning_consistency(",
+        "start_line": 721,
+        "end_line": 759
+      },
+      {
+        "name": "CognitiveLoop._log_failure",
+        "type": "method",
+        "signature": "async def _log_failure(self, failure_type: str, description: str) -> None:",
+        "start_line": 761,
+        "end_line": 777
+      },
+      {
+        "name": "CognitiveLoop._make_error_response",
+        "type": "method",
+        "signature": "def _make_error_response(user_message: str) -> CognitiveResponse:",
+        "start_line": 780,
+        "end_line": 797
+      },
+      {
+        "name": "CognitiveLoop._format_tool_result",
+        "type": "method",
+        "signature": "def _format_tool_result(call, result) -> str:",
+        "start_line": 800,
+        "end_line": 812
+      },
+      {
+        "name": "CognitiveLoop._log_tool_execution",
+        "type": "method",
+        "signature": "async def _log_tool_execution(self, call, result) -> None:",
+        "start_line": 814,
+        "end_line": 860
+      },
+      {
+        "name": "CognitiveLoop._execute_tools",
+        "type": "method",
+        "signature": "async def _execute_tools(self, tool_calls, status_callback, execution_mode: str = \"interactive\"):",
+        "start_line": 862,
+        "end_line": 935
+      },
+      {
+        "name": "CognitiveLoop._store_memories",
+        "type": "method",
+        "signature": "async def _store_memories(self, new_memories: list[NewMemory]) -> int:",
+        "start_line": 942,
+        "end_line": 977
+      },
+      {
+        "name": "CognitiveLoop._process_goals",
+        "type": "method",
+        "signature": "async def _process_goals(self, goal_updates: list[GoalUpdate]) -> int:",
+        "start_line": 979,
+        "end_line": 1033
+      },
+      {
+        "name": "CognitiveLoop._synthesize_skill",
+        "type": "method",
+        "signature": "async def _synthesize_skill(self, goal_description: str) -> None:",
+        "start_line": 1035,
+        "end_line": 1089
+      },
+      {
+        "name": "CognitiveLoop._process_causal_observations",
+        "type": "method",
+        "signature": "async def _process_causal_observations(",
+        "start_line": 1095,
+        "end_line": 1158
+      },
+      {
+        "name": "CognitiveLoop._process_contradictions",
+        "type": "method",
+        "signature": "async def _process_contradictions(",
+        "start_line": 1160,
+        "end_line": 1175
+      },
+      {
+        "name": "CognitiveLoop._process_hypotheses",
+        "type": "method",
+        "signature": "async def _process_hypotheses(self, hypotheses: list[Hypothesis]) -> int:",
+        "start_line": 1177,
+        "end_line": 1189
+      },
+      {
+        "name": "CognitiveLoop._process_hypothesis_resolutions",
+        "type": "method",
+        "signature": "async def _process_hypothesis_resolutions(",
+        "start_line": 1191,
+        "end_line": 1222
+      },
+      {
+        "name": "CognitiveLoop._process_uncertainty_tracking",
+        "type": "method",
+        "signature": "async def _process_uncertainty_tracking(",
+        "start_line": 1224,
+        "end_line": 1244
+      },
+      {
+        "name": "CognitiveLoop.get_all_memories",
+        "type": "method",
+        "signature": "async def get_all_memories(self) -> list[Memory]:",
+        "start_line": 1250,
+        "end_line": 1251
+      },
+      {
+        "name": "CognitiveLoop.get_active_goals",
+        "type": "method",
+        "signature": "async def get_active_goals(self):",
+        "start_line": 1253,
+        "end_line": 1254
+      },
+      {
+        "name": "CognitiveLoop.get_all_goals",
+        "type": "method",
+        "signature": "async def get_all_goals(self):",
+        "start_line": 1256,
+        "end_line": 1257
+      },
+      {
+        "name": "CognitiveLoop.search_memories",
+        "type": "method",
+        "signature": "async def search_memories(self, query: str) -> list[Memory]:",
+        "start_line": 1259,
+        "end_line": 1260
+      },
+      {
+        "name": "CognitiveLoop.add_manual_memory",
+        "type": "method",
+        "signature": "async def add_manual_memory(self, content: str) -> Memory:",
+        "start_line": 1262,
+        "end_line": 1263
+      },
+      {
+        "name": "CognitiveLoop.forget_memory",
+        "type": "method",
+        "signature": "async def forget_memory(self, index: int) -> bool:",
+        "start_line": 1265,
+        "end_line": 1266
+      },
+      {
+        "name": "CognitiveLoop.archive_memory",
+        "type": "method",
+        "signature": "async def archive_memory(self, memory_id: str) -> bool:",
+        "start_line": 1268,
+        "end_line": 1269
+      },
+      {
+        "name": "CognitiveLoop.update_memory_confidence",
+        "type": "method",
+        "signature": "async def update_memory_confidence(self, memory_id: str, confidence: float) -> bool:",
+        "start_line": 1271,
+        "end_line": 1272
+      },
+      {
+        "name": "CognitiveLoop.merge_memories",
+        "type": "method",
+        "signature": "async def merge_memories(self, keep_id: str, merge_id: str) -> bool:",
+        "start_line": 1274,
+        "end_line": 1275
+      },
+      {
+        "name": "CognitiveLoop.get_all_sessions",
+        "type": "method",
+        "signature": "async def get_all_sessions(self) -> list[Session]:",
+        "start_line": 1277,
+        "end_line": 1278
+      },
+      {
+        "name": "CognitiveLoop.get_graph_stats",
+        "type": "method",
+        "signature": "async def get_graph_stats(self) -> dict:",
+        "start_line": 1282,
+        "end_line": 1284
+      },
+      {
+        "name": "CognitiveLoop.get_graph_neighborhood",
+        "type": "method",
+        "signature": "async def get_graph_neighborhood(self, query: str) -> dict | None:",
+        "start_line": 1286,
+        "end_line": 1291
+      },
+      {
+        "name": "CognitiveLoop.get_causal_chain",
+        "type": "method",
+        "signature": "async def get_causal_chain(self, from_concept: str, to_concept: str) -> list[dict] | None:",
+        "start_line": 1293,
+        "end_line": 1299
+      },
+      {
+        "name": "CognitiveLoop.get_contradictions",
+        "type": "method",
+        "signature": "async def get_contradictions(self) -> list[StoredContradiction]:",
+        "start_line": 1301,
+        "end_line": 1302
+      },
+      {
+        "name": "CognitiveLoop.get_all_contradictions",
+        "type": "method",
+        "signature": "async def get_all_contradictions(self) -> list[StoredContradiction]:",
+        "start_line": 1304,
+        "end_line": 1305
+      },
+      {
+        "name": "CognitiveLoop.get_hypotheses",
+        "type": "method",
+        "signature": "async def get_hypotheses(self) -> list[StoredHypothesis]:",
+        "start_line": 1307,
+        "end_line": 1308
+      },
+      {
+        "name": "CognitiveLoop.get_all_hypotheses",
+        "type": "method",
+        "signature": "async def get_all_hypotheses(self) -> list[StoredHypothesis]:",
+        "start_line": 1310,
+        "end_line": 1311
+      },
+      {
+        "name": "CognitiveLoop.resolve_hypothesis",
+        "type": "method",
+        "signature": "async def resolve_hypothesis(self, hypothesis_id: str, action: str) -> bool:",
+        "start_line": 1313,
+        "end_line": 1329
+      },
+      {
+        "name": "CognitiveLoop.get_recent_improvements",
+        "type": "method",
+        "signature": "async def get_recent_improvements(self):",
+        "start_line": 1331,
+        "end_line": 1333
+      },
+      {
+        "name": "CognitiveLoop.get_principles",
+        "type": "method",
+        "signature": "async def get_principles(self):",
+        "start_line": 1335,
+        "end_line": 1337
+      },
+      {
+        "name": "CognitiveLoop.get_uncertainties",
+        "type": "method",
+        "signature": "async def get_uncertainties(self):",
+        "start_line": 1339,
+        "end_line": 1341
+      },
+      {
+        "name": "CognitiveLoop.get_proposals",
+        "type": "method",
+        "signature": "async def get_proposals(self):",
+        "start_line": 1343,
+        "end_line": 1345
+      },
+      {
+        "name": "CognitiveLoop.get_all_proposals",
+        "type": "method",
+        "signature": "async def get_all_proposals(self):",
+        "start_line": 1347,
+        "end_line": 1349
+      },
+      {
+        "name": "CognitiveLoop.resolve_improvement_proposal",
+        "type": "method",
+        "signature": "async def resolve_improvement_proposal(self, proposal_id: str, status: str) -> bool:",
+        "start_line": 1351,
+        "end_line": 1366
+      },
+      {
+        "name": "CognitiveLoop.run_benchmark",
+        "type": "method",
+        "signature": "async def run_benchmark(self, status_callback=None):",
+        "start_line": 1368,
+        "end_line": 1370
+      },
+      {
+        "name": "CognitiveLoop.get_benchmark_history",
+        "type": "method",
+        "signature": "async def get_benchmark_history(self):",
+        "start_line": 1372,
+        "end_line": 1374
+      },
+      {
+        "name": "CognitiveLoop.run_meta_analysis",
+        "type": "method",
+        "signature": "async def run_meta_analysis(self, status_callback=None):",
+        "start_line": 1376,
+        "end_line": 1378
+      },
+      {
+        "name": "CognitiveLoop.run_debate",
+        "type": "method",
+        "signature": "async def run_debate(self, topic: str, status_callback: Callable[..., Any] | None = None):",
+        "start_line": 1380,
+        "end_line": 1386
+      },
+      {
+        "name": "CognitiveLoop.export_session",
+        "type": "method",
+        "signature": "async def export_session(self) -> str | None:",
+        "start_line": 1388,
+        "end_line": 1442
+      },
+      {
+        "name": "CognitiveLoop.get_session_info",
+        "type": "method",
+        "signature": "async def get_session_info(self) -> dict:",
+        "start_line": 1444,
+        "end_line": 1462
+      },
+      {
+        "name": "CognitiveLoop.get_health_status",
+        "type": "method",
+        "signature": "async def get_health_status(self) -> dict:",
+        "start_line": 1464,
+        "end_line": 1480
+      },
+      {
+        "name": "CognitiveLoop.get_setup_status",
+        "type": "method",
+        "signature": "async def get_setup_status(self) -> dict:",
+        "start_line": 1482,
+        "end_line": 1483
+      },
+      {
+        "name": "CognitiveLoop.get_runtime_settings",
+        "type": "method",
+        "signature": "async def get_runtime_settings(self) -> dict:",
+        "start_line": 1485,
+        "end_line": 1492
+      },
+      {
+        "name": "CognitiveLoop.update_runtime_settings",
+        "type": "method",
+        "signature": "async def update_runtime_settings(self, payload: dict[str, Any]) -> dict:",
+        "start_line": 1494,
+        "end_line": 1503
+      },
+      {
+        "name": "CognitiveLoop.get_usage_summary",
+        "type": "method",
+        "signature": "async def get_usage_summary(self) -> dict:",
+        "start_line": 1505,
+        "end_line": 1506
+      },
+      {
+        "name": "CognitiveLoop.list_supported_providers",
+        "type": "method",
+        "signature": "async def list_supported_providers(self) -> list[dict]:",
+        "start_line": 1508,
+        "end_line": 1509
+      },
+      {
+        "name": "CognitiveLoop.test_provider_credentials",
+        "type": "method",
+        "signature": "async def test_provider_credentials(",
+        "start_line": 1511,
+        "end_line": 1517
+      },
+      {
+        "name": "CognitiveLoop.reload_provider",
+        "type": "method",
+        "signature": "def reload_provider(self) -> None:",
+        "start_line": 1519,
+        "end_line": 1534
+      },
+      {
+        "name": "CognitiveLoop._acquire_process_lock",
+        "type": "method",
+        "signature": "def _acquire_process_lock(self) -> None:",
+        "start_line": 1536,
+        "end_line": 1574
+      },
+      {
+        "name": "CognitiveLoop._release_process_lock",
+        "type": "method",
+        "signature": "def _release_process_lock(self) -> None:",
+        "start_line": 1576,
+        "end_line": 1583
+      }
+    ]
+  },
+  "src\\aria\\core\\context_builder.py": {
+    "sha256": "104b9f13bf5b83744a0b91fdecd57ac1eef671bf82cf913a0f03bca61a739983",
+    "symbols": [
+      {
+        "name": "_noop_list",
+        "type": "function",
+        "signature": "async def _noop_list() -> list:",
+        "start_line": 44,
+        "end_line": 46
+      },
+      {
+        "name": "_noop_none",
+        "type": "function",
+        "signature": "async def _noop_none():",
+        "start_line": 49,
+        "end_line": 51
+      },
+      {
+        "name": "ContextBuilder",
+        "type": "class",
+        "signature": "class ContextBuilder:",
+        "start_line": 54,
+        "end_line": 808
+      },
+      {
+        "name": "ContextBuilder.__init__",
+        "type": "method",
+        "signature": "def __init__(",
+        "start_line": 57,
+        "end_line": 91
+      },
+      {
+        "name": "ContextBuilder.build",
+        "type": "method",
+        "signature": "async def build(self, user_input: str, semantic_analysis: dict | None = None) -> str:",
+        "start_line": 93,
+        "end_line": 286
+      },
+      {
+        "name": "ContextBuilder._format_previous_reflection",
+        "type": "method",
+        "signature": "def _format_previous_reflection(reflection: str) -> str:",
+        "start_line": 293,
+        "end_line": 307
+      },
+      {
+        "name": "ContextBuilder._format_active_directives",
+        "type": "method",
+        "signature": "def _format_active_directives(proposals: list) -> str:",
+        "start_line": 310,
+        "end_line": 326
+      },
+      {
+        "name": "ContextBuilder._format_recent_failures",
+        "type": "method",
+        "signature": "def _format_recent_failures(failures: list[dict]) -> str:",
+        "start_line": 329,
+        "end_line": 345
+      },
+      {
+        "name": "ContextBuilder._format_graph_context",
+        "type": "method",
+        "signature": "def _format_graph_context(self, graph_context: list[dict]) -> str:",
+        "start_line": 347,
+        "end_line": 384
+      },
+      {
+        "name": "ContextBuilder._format_memories",
+        "type": "method",
+        "signature": "def _format_memories(self, memories: list[Memory]) -> str:",
+        "start_line": 386,
+        "end_line": 426
+      },
+      {
+        "name": "ContextBuilder._format_contradictions",
+        "type": "method",
+        "signature": "def _format_contradictions(self, contradictions) -> str:",
+        "start_line": 428,
+        "end_line": 442
+      },
+      {
+        "name": "ContextBuilder._format_hypotheses",
+        "type": "method",
+        "signature": "def _format_hypotheses(self, hypotheses) -> str:",
+        "start_line": 444,
+        "end_line": 465
+      },
+      {
+        "name": "ContextBuilder._format_goals",
+        "type": "method",
+        "signature": "def _format_goals(self, goals: list[Goal]) -> str:",
+        "start_line": 467,
+        "end_line": 495
+      },
+      {
+        "name": "ContextBuilder._get_workspace_context",
+        "type": "method",
+        "signature": "async def _get_workspace_context(self, query: str) -> list[dict]:",
+        "start_line": 501,
+        "end_line": 510
+      },
+      {
+        "name": "ContextBuilder._format_workspace_context",
+        "type": "method",
+        "signature": "def _format_workspace_context(self, snippets: list[dict]) -> str:",
+        "start_line": 512,
+        "end_line": 534
+      },
+      {
+        "name": "ContextBuilder._sanitize_user_input",
+        "type": "method",
+        "signature": "def _sanitize_user_input(text: str, max_length: int = 2000) -> str:",
+        "start_line": 541,
+        "end_line": 558
+      },
+      {
+        "name": "ContextBuilder._needs_creativity",
+        "type": "method",
+        "signature": "def _needs_creativity(text: str) -> bool:",
+        "start_line": 561,
+        "end_line": 564
+      },
+      {
+        "name": "ContextBuilder._format_history",
+        "type": "method",
+        "signature": "def _format_history(self, turns: list[Turn]) -> str:",
+        "start_line": 566,
+        "end_line": 596
+      },
+      {
+        "name": "ContextBuilder._compress_if_needed",
+        "type": "method",
+        "signature": "async def _compress_if_needed(",
+        "start_line": 602,
+        "end_line": 658
+      },
+      {
+        "name": "ContextBuilder._compress_turns",
+        "type": "method",
+        "signature": "async def _compress_turns(self, turns: list[Turn]) -> str:",
+        "start_line": 660,
+        "end_line": 693
+      },
+      {
+        "name": "ContextBuilder._format_compressed_history",
+        "type": "method",
+        "signature": "def _format_compressed_history(summary: str, remaining_turns: list[Turn]) -> str:",
+        "start_line": 696,
+        "end_line": 727
+      },
+      {
+        "name": "ContextBuilder._format_stats",
+        "type": "method",
+        "signature": "async def _format_stats(self) -> str:",
+        "start_line": 729,
+        "end_line": 764
+      },
+      {
+        "name": "ContextBuilder._format_semantic_analysis",
+        "type": "method",
+        "signature": "def _format_semantic_analysis(self, analysis: dict) -> str:",
+        "start_line": 765,
+        "end_line": 808
+      }
+    ]
+  },
+  "src\\aria\\core\\creativity.py": {
+    "sha256": "ce33ae1cb013dec87ba0cef2bd0ee1ce0ab55e05e3afa2d1f39c4d39aa681874",
+    "symbols": [
+      {
+        "name": "CreativeVariant",
+        "type": "class",
+        "signature": "class CreativeVariant:",
+        "start_line": 11,
+        "end_line": 14
+      },
+      {
+        "name": "CreativityStack",
+        "type": "class",
+        "signature": "class CreativityStack:",
+        "start_line": 17,
+        "end_line": 46
+      },
+      {
+        "name": "CreativityStack.variants_for",
+        "type": "method",
+        "signature": "def variants_for(self, task: str) -> list[CreativeVariant]:",
+        "start_line": 20,
+        "end_line": 37
+      },
+      {
+        "name": "CreativityStack.format_for_prompt",
+        "type": "method",
+        "signature": "def format_for_prompt(self, task: str) -> str:",
+        "start_line": 39,
+        "end_line": 46
+      }
+    ]
+  },
+  "src\\aria\\core\\critic.py": {
+    "sha256": "ce19bd69e8cafcdeaabf6112d18a5bc8b484641a9a9194c1a6b277ff739e7a26",
+    "symbols": [
+      {
+        "name": "ResponseCritic",
+        "type": "class",
+        "signature": "class ResponseCritic:",
+        "start_line": 57,
+        "end_line": 129
+      },
+      {
+        "name": "ResponseCritic.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm_client: SupportsLLM, model_override: str | None = None):",
+        "start_line": 60,
+        "end_line": 63
+      },
+      {
+        "name": "ResponseCritic.critique",
+        "type": "method",
+        "signature": "async def critique(",
+        "start_line": 65,
+        "end_line": 129
+      }
+    ]
+  },
+  "src\\aria\\core\\debate.py": {
+    "sha256": "922e38a17b2ffce4cc08e5d742aabf9d0274ae6baa87dc512a4d2478c021952b",
+    "symbols": [
+      {
+        "name": "DebateEngine",
+        "type": "class",
+        "signature": "class DebateEngine:",
+        "start_line": 43,
+        "end_line": 177
+      },
+      {
+        "name": "DebateEngine.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm_client: SupportsLLM, db: Database):",
+        "start_line": 46,
+        "end_line": 48
+      },
+      {
+        "name": "DebateEngine.run_debate",
+        "type": "method",
+        "signature": "async def run_debate(",
+        "start_line": 50,
+        "end_line": 96
+      },
+      {
+        "name": "DebateEngine._generate_argument",
+        "type": "method",
+        "signature": "async def _generate_argument(",
+        "start_line": 98,
+        "end_line": 121
+      },
+      {
+        "name": "DebateEngine._judge_debate",
+        "type": "method",
+        "signature": "async def _judge_debate(",
+        "start_line": 123,
+        "end_line": 139
+      },
+      {
+        "name": "DebateEngine._save_debate",
+        "type": "method",
+        "signature": "async def _save_debate(",
+        "start_line": 141,
+        "end_line": 158
+      },
+      {
+        "name": "DebateEngine.track_uncertainty",
+        "type": "method",
+        "signature": "async def track_uncertainty(self, topic: str, why_uncertain: str) -> None:",
+        "start_line": 160,
+        "end_line": 172
+      },
+      {
+        "name": "DebateEngine.get_uncertainties",
+        "type": "method",
+        "signature": "async def get_uncertainties(self) -> list[UncertaintyTopic]:",
+        "start_line": 174,
+        "end_line": 177
+      }
+    ]
+  },
+  "src\\aria\\core\\ethics.py": {
+    "sha256": "073783e03b0fe87750e56a8b5b5650334245425e56d4c5c83b77c34e38ff2cbb",
+    "symbols": [
+      {
+        "name": "EthicsEngine",
+        "type": "class",
+        "signature": "class EthicsEngine:",
+        "start_line": 28,
+        "end_line": 179
+      },
+      {
+        "name": "EthicsEngine.evaluate_tool_call",
+        "type": "method",
+        "signature": "def evaluate_tool_call(",
+        "start_line": 38,
+        "end_line": 144
+      },
+      {
+        "name": "EthicsEngine._normalize_risk",
+        "type": "method",
+        "signature": "def _normalize_risk(risk_level: str) -> ToolRisk:",
+        "start_line": 147,
+        "end_line": 151
+      },
+      {
+        "name": "EthicsEngine._looks_sensitive_network_request",
+        "type": "method",
+        "signature": "def _looks_sensitive_network_request(args_dict: dict[str, Any]) -> bool:",
+        "start_line": 154,
+        "end_line": 167
+      },
+      {
+        "name": "EthicsEngine._looks_like_broad_file_access",
+        "type": "method",
+        "signature": "def _looks_like_broad_file_access(args_dict: dict[str, Any]) -> bool:",
+        "start_line": 170,
+        "end_line": 179
+      }
+    ]
+  },
+  "src\\aria\\core\\generalization.py": {
+    "sha256": "be8c4459a28a89f9844352c236136910f42538650469c48260ab22754081ca8f",
+    "symbols": [
+      {
+        "name": "GeneralizationEngine",
+        "type": "class",
+        "signature": "class GeneralizationEngine:",
+        "start_line": 43,
+        "end_line": 164
+      },
+      {
+        "name": "GeneralizationEngine.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm_client: SupportsLLM, db: Database):",
+        "start_line": 46,
+        "end_line": 48
+      },
+      {
+        "name": "GeneralizationEngine.abstract_principles",
+        "type": "method",
+        "signature": "async def abstract_principles(",
+        "start_line": 50,
+        "end_line": 124
+      },
+      {
+        "name": "GeneralizationEngine.get_all_principles",
+        "type": "method",
+        "signature": "async def get_all_principles(self) -> list[UniversalPrinciple]:",
+        "start_line": 126,
+        "end_line": 142
+      },
+      {
+        "name": "GeneralizationEngine.format_for_prompt",
+        "type": "method",
+        "signature": "def format_for_prompt(self, principles: list[UniversalPrinciple]) -> str:",
+        "start_line": 144,
+        "end_line": 164
+      }
+    ]
+  },
+  "src\\aria\\core\\identity.py": {
+    "sha256": "b5ed9fdc8f91a171d21b993fb1378d02d068528f80f9dd8875aa305e3a237276",
+    "symbols": [
+      {
+        "name": "build_identity_section",
+        "type": "function",
+        "signature": "def build_identity_section(settings: dict[str, Any] | None = None) -> str:",
+        "start_line": 77,
+        "end_line": 94
+      }
+    ]
+  },
+  "src\\aria\\core\\improver.py": {
+    "sha256": "b00c7b48d4f89d40f6ab134b406b29652e1d1733cc34cc5c44984f76fc413f33",
+    "symbols": [
+      {
+        "name": "ImprovementLogger",
+        "type": "class",
+        "signature": "class ImprovementLogger:",
+        "start_line": 16,
+        "end_line": 81
+      },
+      {
+        "name": "ImprovementLogger.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 19,
+        "end_line": 20
+      },
+      {
+        "name": "ImprovementLogger.log_improvement",
+        "type": "method",
+        "signature": "async def log_improvement(",
+        "start_line": 22,
+        "end_line": 59
+      },
+      {
+        "name": "ImprovementLogger.get_recent_improvements",
+        "type": "method",
+        "signature": "async def get_recent_improvements(self, limit: int = 10) -> list[ImprovementLogEntry]:",
+        "start_line": 61,
+        "end_line": 81
+      }
+    ]
+  },
+  "src\\aria\\core\\meta_reasoning.py": {
+    "sha256": "6dc05b7ef1de9a0ff5b96641c2bf4eec408531e7cd5655603964f5f86cb86c49",
+    "symbols": [
+      {
+        "name": "MetaReasoningEngine",
+        "type": "class",
+        "signature": "class MetaReasoningEngine:",
+        "start_line": 49,
+        "end_line": 248
+      },
+      {
+        "name": "MetaReasoningEngine.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm_client: SupportsLLM, db: Database):",
+        "start_line": 52,
+        "end_line": 54
+      },
+      {
+        "name": "MetaReasoningEngine.analyze_and_propose",
+        "type": "method",
+        "signature": "async def analyze_and_propose(",
+        "start_line": 56,
+        "end_line": 119
+      },
+      {
+        "name": "MetaReasoningEngine.process_inline_proposals",
+        "type": "method",
+        "signature": "async def process_inline_proposals(",
+        "start_line": 121,
+        "end_line": 162
+      },
+      {
+        "name": "MetaReasoningEngine.get_pending_proposals",
+        "type": "method",
+        "signature": "async def get_pending_proposals(self) -> list[SelfImprovementProposal]:",
+        "start_line": 164,
+        "end_line": 169
+      },
+      {
+        "name": "MetaReasoningEngine.get_all_proposals",
+        "type": "method",
+        "signature": "async def get_all_proposals(self) -> list[SelfImprovementProposal]:",
+        "start_line": 171,
+        "end_line": 176
+      },
+      {
+        "name": "MetaReasoningEngine.get_approved_proposals",
+        "type": "method",
+        "signature": "async def get_approved_proposals(self) -> list[SelfImprovementProposal]:",
+        "start_line": 178,
+        "end_line": 183
+      },
+      {
+        "name": "MetaReasoningEngine.update_status",
+        "type": "method",
+        "signature": "async def update_status(",
+        "start_line": 185,
+        "end_line": 194
+      },
+      {
+        "name": "MetaReasoningEngine._row_to_proposal",
+        "type": "method",
+        "signature": "def _row_to_proposal(self, row) -> SelfImprovementProposal:",
+        "start_line": 196,
+        "end_line": 206
+      },
+      {
+        "name": "MetaReasoningEngine._gather_performance_data",
+        "type": "method",
+        "signature": "async def _gather_performance_data(self) -> str:",
+        "start_line": 208,
+        "end_line": 248
+      }
+    ]
+  },
+  "src\\aria\\core\\planner.py": {
+    "sha256": "8299f5a964fea56b3693adb7d60e2e1a0a1fcfdcc162149e66e31a6a522a8678",
+    "symbols": [
+      {
+        "name": "Planner",
+        "type": "class",
+        "signature": "class Planner:",
+        "start_line": 20,
+        "end_line": 150
+      },
+      {
+        "name": "Planner.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 28,
+        "end_line": 29
+      },
+      {
+        "name": "Planner.get_active_plan",
+        "type": "method",
+        "signature": "async def get_active_plan(self, session_id: str) -> dict | None:",
+        "start_line": 31,
+        "end_line": 48
+      },
+      {
+        "name": "Planner.should_plan",
+        "type": "method",
+        "signature": "def should_plan(self, user_input: str, tool_count: int = 0) -> bool:",
+        "start_line": 50,
+        "end_line": 52
+      },
+      {
+        "name": "Planner.create_plan",
+        "type": "method",
+        "signature": "async def create_plan(self, user_input: str, session_id: str | None, tool_names: list[str]) -> Plan:",
+        "start_line": 54,
+        "end_line": 86
+      },
+      {
+        "name": "Planner.add_step",
+        "type": "method",
+        "signature": "async def add_step(self, plan_id: str, step_number: int, description: str, required_tools: list[str]) -> PlanStep:",
+        "start_line": 88,
+        "end_line": 107
+      },
+      {
+        "name": "Planner.reconcile_tools",
+        "type": "method",
+        "signature": "async def reconcile_tools(self, plan_id: str | None, results: list[ToolResult]) -> None:",
+        "start_line": 109,
+        "end_line": 126
+      },
+      {
+        "name": "Planner.complete_plan",
+        "type": "method",
+        "signature": "async def complete_plan(self, plan_id: str | None, blocked: bool = False) -> None:",
+        "start_line": 128,
+        "end_line": 145
+      },
+      {
+        "name": "Planner._make_title",
+        "type": "method",
+        "signature": "def _make_title(user_input: str) -> str:",
+        "start_line": 148,
+        "end_line": 150
+      }
+    ]
+  },
+  "src\\aria\\core\\semantic_parser.py": {
+    "sha256": "707ae0aa9c10914d808ab3b8c64561e11b7d0428e47cca977066b5e5e7ea6185",
+    "symbols": [
+      {
+        "name": "SemanticParser",
+        "type": "class",
+        "signature": "class SemanticParser:",
+        "start_line": 5,
+        "end_line": 175
+      },
+      {
+        "name": "SemanticParser.__init__",
+        "type": "method",
+        "signature": "def __init__(self, ontology: Ontology, initial_profiles: dict[str, list[str]] = None):",
+        "start_line": 10,
+        "end_line": 73
+      },
+      {
+        "name": "SemanticParser.analyze_input",
+        "type": "method",
+        "signature": "def analyze_input(self, user_input: str, context: dict = None) -> dict:",
+        "start_line": 75,
+        "end_line": 142
+      },
+      {
+        "name": "SemanticParser.clarify_subjective_term",
+        "type": "method",
+        "signature": "def clarify_subjective_term(self, term: str) -> str:",
+        "start_line": 144,
+        "end_line": 154
+      },
+      {
+        "name": "SemanticParser._tokenize",
+        "type": "method",
+        "signature": "def _tokenize(text: str):",
+        "start_line": 157,
+        "end_line": 158
+      },
+      {
+        "name": "SemanticParser._ordered_subjective_terms",
+        "type": "method",
+        "signature": "def _ordered_subjective_terms(self):",
+        "start_line": 160,
+        "end_line": 162
+      },
+      {
+        "name": "SemanticParser._contains_term",
+        "type": "method",
+        "signature": "def _contains_term(text: str, term: str):",
+        "start_line": 165,
+        "end_line": 166
+      },
+      {
+        "name": "SemanticParser._extract_context_window",
+        "type": "method",
+        "signature": "def _extract_context_window(user_input: str, term: str, radius: int = 45):",
+        "start_line": 169,
+        "end_line": 175
+      }
+    ]
+  },
+  "src\\aria\\core\\simulator.py": {
+    "sha256": "fdd70a1e51fd0d944cdc26235b10005972afaae34a9dca0618102747f165e09a",
+    "symbols": [
+      {
+        "name": "PhantomSimulator",
+        "type": "class",
+        "signature": "class PhantomSimulator:",
+        "start_line": 21,
+        "end_line": 157
+      },
+      {
+        "name": "PhantomSimulator.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 24,
+        "end_line": 25
+      },
+      {
+        "name": "PhantomSimulator._setup_phantom_dir",
+        "type": "method",
+        "signature": "def _setup_phantom_dir(self):",
+        "start_line": 27,
+        "end_line": 31
+      },
+      {
+        "name": "PhantomSimulator._cleanup",
+        "type": "method",
+        "signature": "def _cleanup(self):",
+        "start_line": 33,
+        "end_line": 40
+      },
+      {
+        "name": "PhantomSimulator.simulate_edit",
+        "type": "method",
+        "signature": "def simulate_edit(self, filepath: Path, new_content: str) -> tuple[bool, str]:",
+        "start_line": 42,
+        "end_line": 76
+      },
+      {
+        "name": "PhantomSimulator._push_alert",
+        "type": "method",
+        "signature": "def _push_alert(self, filename: str, error_msg: str):",
+        "start_line": 78,
+        "end_line": 97
+      },
+      {
+        "name": "PhantomSimulator._run_syntax_check",
+        "type": "method",
+        "signature": "def _run_syntax_check(self, phantom_file: Path) -> tuple[bool, str]:",
+        "start_line": 99,
+        "end_line": 111
+      },
+      {
+        "name": "PhantomSimulator._check_python",
+        "type": "method",
+        "signature": "def _check_python(self, filepath: Path) -> tuple[bool, str]:",
+        "start_line": 113,
+        "end_line": 124
+      },
+      {
+        "name": "PhantomSimulator._check_typescript",
+        "type": "method",
+        "signature": "def _check_typescript(self, filepath: Path) -> tuple[bool, str]:",
+        "start_line": 126,
+        "end_line": 147
+      },
+      {
+        "name": "PhantomSimulator._check_json",
+        "type": "method",
+        "signature": "def _check_json(self, filepath: Path) -> tuple[bool, str]:",
+        "start_line": 149,
+        "end_line": 157
+      }
+    ]
+  },
+  "src\\aria\\core\\skills.py": {
+    "sha256": "9a2fad850e743b9be20ea49447ee19985ebc22508a64831d2fa1d69492cc05a5",
+    "symbols": [
+      {
+        "name": "SkillLoader",
+        "type": "class",
+        "signature": "class SkillLoader:",
+        "start_line": 15,
+        "end_line": 118
+      },
+      {
+        "name": "SkillLoader.__init__",
+        "type": "method",
+        "signature": "def __init__(self, vector_store: VectorStore | None = None):",
+        "start_line": 21,
+        "end_line": 34
+      },
+      {
+        "name": "SkillLoader.load_all",
+        "type": "method",
+        "signature": "def load_all(self) -> int:",
+        "start_line": 36,
+        "end_line": 66
+      },
+      {
+        "name": "SkillLoader.get_relevant_skills",
+        "type": "method",
+        "signature": "def get_relevant_skills(self, query: str, limit: int = 3) -> dict[str, str]:",
+        "start_line": 68,
+        "end_line": 93
+      },
+      {
+        "name": "SkillLoader.format_for_prompt",
+        "type": "method",
+        "signature": "def format_for_prompt(self, query: str | None = None) -> str:",
+        "start_line": 95,
+        "end_line": 118
+      }
+    ]
+  },
+  "src\\aria\\core\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\knowledge_graph\\mapper.py": {
+    "sha256": "cf74a924ec1f39444bfbccd94b29b0bd5567c3afdeaa4fa92017f5fa5cd749db",
+    "symbols": [
+      {
+        "name": "SkeletonMapper",
+        "type": "class",
+        "signature": "class SkeletonMapper:",
+        "start_line": 18,
+        "end_line": 115
+      },
+      {
+        "name": "SkeletonMapper.parse_python_file",
+        "type": "method",
+        "signature": "def parse_python_file(filepath: Path) -> dict:",
+        "start_line": 22,
+        "end_line": 57
+      },
+      {
+        "name": "SkeletonMapper.parse_typescript_file",
+        "type": "method",
+        "signature": "def parse_typescript_file(filepath: Path) -> dict:",
+        "start_line": 60,
+        "end_line": 101
+      },
+      {
+        "name": "SkeletonMapper.map_file",
+        "type": "method",
+        "signature": "def map_file(cls, filepath: Path) -> dict | None:",
+        "start_line": 104,
+        "end_line": 115
+      }
+    ]
+  },
+  "src\\aria\\knowledge_graph\\ontology.py": {
+    "sha256": "1ac8bb4cb0917ea7fb06f62c3f7f76da67b0328c90c61cd7cd6af4fcf7591da6",
+    "symbols": [
+      {
+        "name": "Ontology",
+        "type": "class",
+        "signature": "class Ontology:",
+        "start_line": 5,
+        "end_line": 158
+      },
+      {
+        "name": "Ontology.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 9,
+        "end_line": 12
+      },
+      {
+        "name": "Ontology.add_concept",
+        "type": "method",
+        "signature": "def add_concept(self, name, attributes=None):",
+        "start_line": 14,
+        "end_line": 18
+      },
+      {
+        "name": "Ontology.add_relationship",
+        "type": "method",
+        "signature": "def add_relationship(self, from_concept, to_concept, rel_type, properties=None):",
+        "start_line": 20,
+        "end_line": 31
+      },
+      {
+        "name": "Ontology.get_relationships",
+        "type": "method",
+        "signature": "def get_relationships(self, concept):",
+        "start_line": 33,
+        "end_line": 34
+      },
+      {
+        "name": "Ontology.get_concept_attributes",
+        "type": "method",
+        "signature": "def get_concept_attributes(self, concept):",
+        "start_line": 36,
+        "end_line": 37
+      },
+      {
+        "name": "Ontology.find_matches",
+        "type": "method",
+        "signature": "def find_matches(self, text: str):",
+        "start_line": 39,
+        "end_line": 49
+      },
+      {
+        "name": "Ontology.serialize",
+        "type": "method",
+        "signature": "def serialize(self):",
+        "start_line": 51,
+        "end_line": 52
+      },
+      {
+        "name": "Ontology.merge_from_json_file",
+        "type": "method",
+        "signature": "def merge_from_json_file(self, path: str | Path) -> None:",
+        "start_line": 54,
+        "end_line": 77
+      },
+      {
+        "name": "Ontology.deserialize",
+        "type": "method",
+        "signature": "def deserialize(cls, data):",
+        "start_line": 80,
+        "end_line": 84
+      },
+      {
+        "name": "Ontology._bootstrap_default_concepts",
+        "type": "method",
+        "signature": "def _bootstrap_default_concepts(self):",
+        "start_line": 86,
+        "end_line": 152
+      },
+      {
+        "name": "Ontology._contains_term",
+        "type": "method",
+        "signature": "def _contains_term(text: str, term: str):",
+        "start_line": 155,
+        "end_line": 158
+      }
+    ]
+  },
+  "src\\aria\\knowledge_graph\\watcher.py": {
+    "sha256": "04d625e191e92751954992d6834419e5efebe37e5f9ac59bcb8fc4cf9b7171a4",
+    "symbols": [
+      {
+        "name": "WorkspaceEventHandler",
+        "type": "class",
+        "signature": "class WorkspaceEventHandler(FileSystemEventHandler):",
+        "start_line": 26,
+        "end_line": 69
+      },
+      {
+        "name": "WorkspaceEventHandler.__init__",
+        "type": "method",
+        "signature": "def __init__(self, callback):",
+        "start_line": 29,
+        "end_line": 35
+      },
+      {
+        "name": "WorkspaceEventHandler._is_valid_file",
+        "type": "method",
+        "signature": "def _is_valid_file(self, path: str) -> bool:",
+        "start_line": 37,
+        "end_line": 50
+      },
+      {
+        "name": "WorkspaceEventHandler.on_created",
+        "type": "method",
+        "signature": "def on_created(self, event: FileSystemEvent):",
+        "start_line": 52,
+        "end_line": 54
+      },
+      {
+        "name": "WorkspaceEventHandler.on_modified",
+        "type": "method",
+        "signature": "def on_modified(self, event: FileSystemEvent):",
+        "start_line": 56,
+        "end_line": 58
+      },
+      {
+        "name": "WorkspaceEventHandler.on_deleted",
+        "type": "method",
+        "signature": "def on_deleted(self, event: FileSystemEvent):",
+        "start_line": 60,
+        "end_line": 62
+      },
+      {
+        "name": "WorkspaceEventHandler.on_moved",
+        "type": "method",
+        "signature": "def on_moved(self, event: FileSystemEvent):",
+        "start_line": 64,
+        "end_line": 69
+      },
+      {
+        "name": "DebouncedWatcher",
+        "type": "class",
+        "signature": "class DebouncedWatcher:",
+        "start_line": 72,
+        "end_line": 203
+      },
+      {
+        "name": "DebouncedWatcher.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db, debounce_seconds: float = 15.0, knowledge_graph=None):",
+        "start_line": 75,
+        "end_line": 82
+      },
+      {
+        "name": "DebouncedWatcher._on_event",
+        "type": "method",
+        "signature": "def _on_event(self, filepath: str, action: str):",
+        "start_line": 84,
+        "end_line": 90
+      },
+      {
+        "name": "DebouncedWatcher._process_batch",
+        "type": "method",
+        "signature": "async def _process_batch(self):",
+        "start_line": 92,
+        "end_line": 152
+      },
+      {
+        "name": "DebouncedWatcher._initial_scan",
+        "type": "method",
+        "signature": "async def _initial_scan(self):",
+        "start_line": 154,
+        "end_line": 176
+      },
+      {
+        "name": "DebouncedWatcher.run_loop",
+        "type": "method",
+        "signature": "async def run_loop(self):",
+        "start_line": 178,
+        "end_line": 203
+      }
+    ]
+  },
+  "src\\aria\\llm\\anthropic_provider.py": {
+    "sha256": "432b679889bc825d4280015589e30f10c93e0a7f6a44afcc0a92d7114ba69d4b",
+    "symbols": [
+      {
+        "name": "AnthropicProvider",
+        "type": "class",
+        "signature": "class AnthropicProvider(BaseLLMProvider):",
+        "start_line": 14,
+        "end_line": 112
+      },
+      {
+        "name": "AnthropicProvider.__init__",
+        "type": "method",
+        "signature": "def __init__(self, default_model: str, api_key: str, usage_tracker: UsageTracker | None = None):",
+        "start_line": 19,
+        "end_line": 23
+      },
+      {
+        "name": "AnthropicProvider.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 25,
+        "end_line": 31
+      },
+      {
+        "name": "AnthropicProvider.client",
+        "type": "method",
+        "signature": "def client(self):",
+        "start_line": 34,
+        "end_line": 37
+      },
+      {
+        "name": "AnthropicProvider.complete_json",
+        "type": "method",
+        "signature": "async def complete_json(",
+        "start_line": 40,
+        "end_line": 112
+      }
+    ]
+  },
+  "src\\aria\\llm\\base.py": {
+    "sha256": "472da78b4dc9e6f50dca8b3d1b8b9a472c311bd6cf53b694e86e62e09c15d605",
+    "symbols": [
+      {
+        "name": "_is_transient",
+        "type": "function",
+        "signature": "def _is_transient(error: Exception) -> bool:",
+        "start_line": 36,
+        "end_line": 39
+      },
+      {
+        "name": "retry_on_transient",
+        "type": "function",
+        "signature": "def retry_on_transient(max_retries: int = 3, base_delay: float = 1.0):",
+        "start_line": 42,
+        "end_line": 67
+      },
+      {
+        "name": "repair_json",
+        "type": "function",
+        "signature": "def repair_json(raw: str) -> str:",
+        "start_line": 77,
+        "end_line": 105
+      },
+      {
+        "name": "SupportsLLM",
+        "type": "class",
+        "signature": "class SupportsLLM(Protocol):",
+        "start_line": 112,
+        "end_line": 163
+      },
+      {
+        "name": "SupportsLLM.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 116,
+        "end_line": 117
+      },
+      {
+        "name": "SupportsLLM.complete_json",
+        "type": "method",
+        "signature": "async def complete_json(",
+        "start_line": 119,
+        "end_line": 130
+      },
+      {
+        "name": "SupportsLLM.complete_json_stream",
+        "type": "method",
+        "signature": "async def complete_json_stream(",
+        "start_line": 132,
+        "end_line": 144
+      },
+      {
+        "name": "SupportsLLM.think",
+        "type": "method",
+        "signature": "async def think(",
+        "start_line": 146,
+        "end_line": 153
+      },
+      {
+        "name": "SupportsLLM.think_stream",
+        "type": "method",
+        "signature": "async def think_stream(",
+        "start_line": 155,
+        "end_line": 163
+      },
+      {
+        "name": "BaseLLMProvider",
+        "type": "class",
+        "signature": "class BaseLLMProvider(ABC):",
+        "start_line": 166,
+        "end_line": 523
+      },
+      {
+        "name": "BaseLLMProvider.__init__",
+        "type": "method",
+        "signature": "def __init__(self, default_model: str):",
+        "start_line": 169,
+        "end_line": 223
+      },
+      {
+        "name": "BaseLLMProvider._cached_complete_json",
+        "type": "method",
+        "signature": "async def _cached_complete_json(",
+        "start_line": 225,
+        "end_line": 308
+      },
+      {
+        "name": "BaseLLMProvider._cached_complete_json_stream",
+        "type": "method",
+        "signature": "async def _cached_complete_json_stream(",
+        "start_line": 310,
+        "end_line": 402
+      },
+      {
+        "name": "BaseLLMProvider.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 405,
+        "end_line": 406
+      },
+      {
+        "name": "BaseLLMProvider.complete_json",
+        "type": "method",
+        "signature": "async def complete_json(",
+        "start_line": 409,
+        "end_line": 420
+      },
+      {
+        "name": "BaseLLMProvider.complete_json_stream",
+        "type": "method",
+        "signature": "async def complete_json_stream(",
+        "start_line": 422,
+        "end_line": 451
+      },
+      {
+        "name": "BaseLLMProvider.complete_text",
+        "type": "method",
+        "signature": "async def complete_text(",
+        "start_line": 453,
+        "end_line": 478
+      },
+      {
+        "name": "BaseLLMProvider.think",
+        "type": "method",
+        "signature": "async def think(",
+        "start_line": 480,
+        "end_line": 495
+      },
+      {
+        "name": "BaseLLMProvider.think_stream",
+        "type": "method",
+        "signature": "async def think_stream(",
+        "start_line": 497,
+        "end_line": 514
+      },
+      {
+        "name": "BaseLLMProvider.parse_model_json",
+        "type": "method",
+        "signature": "def parse_model_json(schema: type[SchemaT], payload: str | dict[str, Any]) -> SchemaT:",
+        "start_line": 517,
+        "end_line": 523
+      }
+    ]
+  },
+  "src\\aria\\llm\\catalog.py": {
+    "sha256": "771912ef95c79b68b7748c56ed20ce9c40cfe8f5581c2871bb0a245306c4d828",
+    "symbols": [
+      {
+        "name": "list_providers",
+        "type": "function",
+        "signature": "def list_providers() -> list[dict[str, Any]]:",
+        "start_line": 807,
+        "end_line": 819
+      },
+      {
+        "name": "get_provider_defaults",
+        "type": "function",
+        "signature": "def get_provider_defaults(provider: str) -> dict[str, Any]:",
+        "start_line": 822,
+        "end_line": 841
+      },
+      {
+        "name": "find_model",
+        "type": "function",
+        "signature": "def find_model(provider: str, model_id: str) -> dict[str, Any] | None:",
+        "start_line": 844,
+        "end_line": 846
+      }
+    ]
+  },
+  "src\\aria\\llm\\factory.py": {
+    "sha256": "2dc5463e4d326878c921e5ae32efe77186e4fb92ba5f8d65cba87e93bb0e233c",
+    "symbols": [
+      {
+        "name": "build_provider",
+        "type": "function",
+        "signature": "def build_provider(",
+        "start_line": 12,
+        "end_line": 52
+      }
+    ]
+  },
+  "src\\aria\\llm\\gemini.py": {
+    "sha256": "65916d03d92d255048eb714c4f7138eabc295565f53fc97f15840cc063d8b836",
+    "symbols": [
+      {
+        "name": "StreamingJSONParser",
+        "type": "class",
+        "signature": "class StreamingJSONParser:",
+        "start_line": 26,
+        "end_line": 135
+      },
+      {
+        "name": "StreamingJSONParser.__init__",
+        "type": "method",
+        "signature": "def __init__(self, text_callback: Callable[[str], None]):",
+        "start_line": 32,
+        "end_line": 44
+      },
+      {
+        "name": "StreamingJSONParser.feed",
+        "type": "method",
+        "signature": "def feed(self, char: str):",
+        "start_line": 46,
+        "end_line": 135
+      },
+      {
+        "name": "GeminiClient",
+        "type": "class",
+        "signature": "class GeminiClient(BaseLLMProvider):",
+        "start_line": 142,
+        "end_line": 350
+      },
+      {
+        "name": "GeminiClient.__init__",
+        "type": "method",
+        "signature": "def __init__(",
+        "start_line": 145,
+        "end_line": 155
+      },
+      {
+        "name": "GeminiClient.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 157,
+        "end_line": 161
+      },
+      {
+        "name": "GeminiClient.client",
+        "type": "method",
+        "signature": "def client(self) -> genai.Client:",
+        "start_line": 164,
+        "end_line": 168
+      },
+      {
+        "name": "GeminiClient.complete_json",
+        "type": "method",
+        "signature": "async def complete_json(",
+        "start_line": 171,
+        "end_line": 249
+      },
+      {
+        "name": "GeminiClient.complete_json_stream",
+        "type": "method",
+        "signature": "async def complete_json_stream(",
+        "start_line": 252,
+        "end_line": 350
+      }
+    ]
+  },
+  "src\\aria\\llm\\local.py": {
+    "sha256": "59e475bb40549fb2b7c5362dd73e3f675f2fb0db4bc200f62de464e0c32c3d4a",
+    "symbols": [
+      {
+        "name": "LocalLLMClient",
+        "type": "class",
+        "signature": "class LocalLLMClient:",
+        "start_line": 21,
+        "end_line": 63
+      },
+      {
+        "name": "LocalLLMClient.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 24,
+        "end_line": 27
+      },
+      {
+        "name": "LocalLLMClient.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 29,
+        "end_line": 31
+      },
+      {
+        "name": "LocalLLMClient.think",
+        "type": "method",
+        "signature": "async def think(",
+        "start_line": 33,
+        "end_line": 63
+      }
+    ]
+  },
+  "src\\aria\\llm\\openai_compat.py": {
+    "sha256": "6cd96d21c29250d9a1ee99ba45a7a2ab057f4574099ed63538e79d3eb0dacaaf",
+    "symbols": [
+      {
+        "name": "OpenAICompatibleProvider",
+        "type": "class",
+        "signature": "class OpenAICompatibleProvider(BaseLLMProvider):",
+        "start_line": 14,
+        "end_line": 121
+      },
+      {
+        "name": "OpenAICompatibleProvider.__init__",
+        "type": "method",
+        "signature": "def __init__(",
+        "start_line": 17,
+        "end_line": 33
+      },
+      {
+        "name": "OpenAICompatibleProvider.connect",
+        "type": "method",
+        "signature": "def connect(self) -> None:",
+        "start_line": 35,
+        "end_line": 46
+      },
+      {
+        "name": "OpenAICompatibleProvider.client",
+        "type": "method",
+        "signature": "def client(self):",
+        "start_line": 49,
+        "end_line": 52
+      },
+      {
+        "name": "OpenAICompatibleProvider.complete_json",
+        "type": "method",
+        "signature": "async def complete_json(",
+        "start_line": 55,
+        "end_line": 121
+      }
+    ]
+  },
+  "src\\aria\\llm\\provider_test.py": {
+    "sha256": "960e6411eaa00b8e50d65d98435ffce9661d72a0c8948d8a2ee679beb765cabf",
+    "symbols": [
+      {
+        "name": "_Ping",
+        "type": "class",
+        "signature": "class _Ping(BaseModel):",
+        "start_line": 19,
+        "end_line": 20
+      },
+      {
+        "name": "_known_provider_ids",
+        "type": "function",
+        "signature": "def _known_provider_ids() -> set[str]:",
+        "start_line": 23,
+        "end_line": 24
+      },
+      {
+        "name": "humanize_llm_error",
+        "type": "function",
+        "signature": "def humanize_llm_error(exc: BaseException, provider_id: str) -> tuple[str, str, str]:",
+        "start_line": 27,
+        "end_line": 104
+      },
+      {
+        "name": "ping_provider",
+        "type": "function",
+        "signature": "async def ping_provider(",
+        "start_line": 107,
+        "end_line": 196
+      }
+    ]
+  },
+  "src\\aria\\llm\\router.py": {
+    "sha256": "b112e0c5429535891c6caec2aca8c704ca0fa7ceabceb48bcd6e719c0f2debd2",
+    "symbols": [
+      {
+        "name": "ModelRouter",
+        "type": "class",
+        "signature": "class ModelRouter:",
+        "start_line": 9,
+        "end_line": 50
+      },
+      {
+        "name": "ModelRouter.__init__",
+        "type": "method",
+        "signature": "def __init__(self, fast_model: str, reasoning_model: str):",
+        "start_line": 14,
+        "end_line": 16
+      },
+      {
+        "name": "ModelRouter.route",
+        "type": "method",
+        "signature": "def route(self, user_input: str, context_size: int = 0) -> str:",
+        "start_line": 18,
+        "end_line": 50
+      }
+    ]
+  },
+  "src\\aria\\llm\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\memory\\goal_tracker.py": {
+    "sha256": "5dd09a2a84cca2b5e7155f4d565510bb1b4a4ef4d05aafeaf876355d3e5a0f7a",
+    "symbols": [
+      {
+        "name": "GoalTracker",
+        "type": "class",
+        "signature": "class GoalTracker:",
+        "start_line": 20,
+        "end_line": 139
+      },
+      {
+        "name": "GoalTracker.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 23,
+        "end_line": 24
+      },
+      {
+        "name": "GoalTracker.create",
+        "type": "method",
+        "signature": "async def create(self, description: str, priority: str = \"medium\") -> Goal:",
+        "start_line": 30,
+        "end_line": 55
+      },
+      {
+        "name": "GoalTracker.get",
+        "type": "method",
+        "signature": "async def get(self, goal_id: str) -> Goal | None:",
+        "start_line": 57,
+        "end_line": 62
+      },
+      {
+        "name": "GoalTracker.get_active",
+        "type": "method",
+        "signature": "async def get_active(self) -> list[Goal]:",
+        "start_line": 64,
+        "end_line": 74
+      },
+      {
+        "name": "GoalTracker.get_all",
+        "type": "method",
+        "signature": "async def get_all(self) -> list[Goal]:",
+        "start_line": 76,
+        "end_line": 79
+      },
+      {
+        "name": "GoalTracker.complete",
+        "type": "method",
+        "signature": "async def complete(self, goal_id: str, notes: str | None = None) -> Goal | None:",
+        "start_line": 81,
+        "end_line": 83
+      },
+      {
+        "name": "GoalTracker.abandon",
+        "type": "method",
+        "signature": "async def abandon(self, goal_id: str, notes: str | None = None) -> Goal | None:",
+        "start_line": 85,
+        "end_line": 87
+      },
+      {
+        "name": "GoalTracker.find_by_description",
+        "type": "method",
+        "signature": "async def find_by_description(self, description: str) -> Goal | None:",
+        "start_line": 89,
+        "end_line": 97
+      },
+      {
+        "name": "GoalTracker.count_active",
+        "type": "method",
+        "signature": "async def count_active(self) -> int:",
+        "start_line": 99,
+        "end_line": 104
+      },
+      {
+        "name": "GoalTracker._update_status",
+        "type": "method",
+        "signature": "async def _update_status(",
+        "start_line": 110,
+        "end_line": 125
+      },
+      {
+        "name": "GoalTracker._row_to_goal",
+        "type": "method",
+        "signature": "def _row_to_goal(row: dict) -> Goal:",
+        "start_line": 128,
+        "end_line": 139
+      }
+    ]
+  },
+  "src\\aria\\memory\\indexer.py": {
+    "sha256": "642b1c4ce28b2dd89edd06818989b370617fa28e8e540130063e305d58afe01d",
+    "symbols": [
+      {
+        "name": "WorkspaceIndexer",
+        "type": "class",
+        "signature": "class WorkspaceIndexer:",
+        "start_line": 35,
+        "end_line": 162
+      },
+      {
+        "name": "WorkspaceIndexer.__init__",
+        "type": "method",
+        "signature": "def __init__(self, vector_store: VectorStore, root_dir: str, manifest_path=None):",
+        "start_line": 40,
+        "end_line": 45
+      },
+      {
+        "name": "WorkspaceIndexer.run",
+        "type": "method",
+        "signature": "def run(self):",
+        "start_line": 47,
+        "end_line": 95
+      },
+      {
+        "name": "WorkspaceIndexer._index_file",
+        "type": "method",
+        "signature": "def _index_file(self, full_path: str, rel_path: str, fingerprint: dict):",
+        "start_line": 97,
+        "end_line": 119
+      },
+      {
+        "name": "WorkspaceIndexer._chunk_text",
+        "type": "method",
+        "signature": "def _chunk_text(self, text: str, chunk_size: int, overlap: int) -> List[str]:",
+        "start_line": 121,
+        "end_line": 129
+      },
+      {
+        "name": "WorkspaceIndexer._fingerprint",
+        "type": "method",
+        "signature": "def _fingerprint(full_path: str) -> dict:",
+        "start_line": 132,
+        "end_line": 142
+      },
+      {
+        "name": "WorkspaceIndexer._chunk_id",
+        "type": "method",
+        "signature": "def _chunk_id(rel_path: str, digest: str, index: int) -> str:",
+        "start_line": 145,
+        "end_line": 147
+      },
+      {
+        "name": "WorkspaceIndexer._load_manifest",
+        "type": "method",
+        "signature": "def _load_manifest(manifest_path) -> dict[str, dict]:",
+        "start_line": 150,
+        "end_line": 157
+      },
+      {
+        "name": "WorkspaceIndexer._save_manifest",
+        "type": "method",
+        "signature": "def _save_manifest(manifest_path, manifest: dict[str, dict]) -> None:",
+        "start_line": 160,
+        "end_line": 162
+      }
+    ]
+  },
+  "src\\aria\\memory\\memory_store.py": {
+    "sha256": "5136770000f75c67218f000d50fc4fbcec48a01a80f6e453874f5eff86e90808",
+    "symbols": [
+      {
+        "name": "MemoryStore",
+        "type": "class",
+        "signature": "class MemoryStore:",
+        "start_line": 35,
+        "end_line": 493
+      },
+      {
+        "name": "MemoryStore.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 38,
+        "end_line": 40
+      },
+      {
+        "name": "MemoryStore.add",
+        "type": "method",
+        "signature": "async def add(self, memory: Memory) -> Memory | None:",
+        "start_line": 46,
+        "end_line": 84
+      },
+      {
+        "name": "MemoryStore.get",
+        "type": "method",
+        "signature": "async def get(self, memory_id: str) -> Memory | None:",
+        "start_line": 86,
+        "end_line": 93
+      },
+      {
+        "name": "MemoryStore.get_by_index",
+        "type": "method",
+        "signature": "async def get_by_index(self, index: int) -> Memory | None:",
+        "start_line": 95,
+        "end_line": 102
+      },
+      {
+        "name": "MemoryStore.delete",
+        "type": "method",
+        "signature": "async def delete(self, memory_id: str) -> bool:",
+        "start_line": 104,
+        "end_line": 117
+      },
+      {
+        "name": "MemoryStore.delete_by_index",
+        "type": "method",
+        "signature": "async def delete_by_index(self, index: int) -> bool:",
+        "start_line": 119,
+        "end_line": 124
+      },
+      {
+        "name": "MemoryStore.update_access",
+        "type": "method",
+        "signature": "async def update_access(self, memory_id: str) -> None:",
+        "start_line": 126,
+        "end_line": 136
+      },
+      {
+        "name": "MemoryStore.count",
+        "type": "method",
+        "signature": "async def count(self) -> int:",
+        "start_line": 138,
+        "end_line": 141
+      },
+      {
+        "name": "MemoryStore.all_memories",
+        "type": "method",
+        "signature": "async def all_memories(self) -> list[Memory]:",
+        "start_line": 143,
+        "end_line": 148
+      },
+      {
+        "name": "MemoryStore.search",
+        "type": "method",
+        "signature": "async def search(self, query: str) -> list[Memory]:",
+        "start_line": 150,
+        "end_line": 152
+      },
+      {
+        "name": "MemoryStore.add_manual",
+        "type": "method",
+        "signature": "async def add_manual(self, content: str, importance: float = 0.5, level: int = 1, child_memory_ids: list[str] = None) -> Memory:",
+        "start_line": 154,
+        "end_line": 196
+      },
+      {
+        "name": "MemoryStore.retrieve_context",
+        "type": "method",
+        "signature": "async def retrieve_context(self, query: str = \"\") -> list[Memory]:",
+        "start_line": 202,
+        "end_line": 264
+      },
+      {
+        "name": "MemoryStore._get_recent",
+        "type": "method",
+        "signature": "async def _get_recent(self, limit: int) -> list[Memory]:",
+        "start_line": 266,
+        "end_line": 272
+      },
+      {
+        "name": "MemoryStore._get_important",
+        "type": "method",
+        "signature": "async def _get_important(self, limit: int) -> list[Memory]:",
+        "start_line": 274,
+        "end_line": 280
+      },
+      {
+        "name": "MemoryStore._search_relevant",
+        "type": "method",
+        "signature": "async def _search_relevant(self, query: str, limit: int) -> list[Memory]:",
+        "start_line": 282,
+        "end_line": 302
+      },
+      {
+        "name": "MemoryStore._retrieval_score",
+        "type": "method",
+        "signature": "def _retrieval_score(memory: Memory, query: str) -> float:",
+        "start_line": 305,
+        "end_line": 342
+      },
+      {
+        "name": "MemoryStore._is_duplicate",
+        "type": "method",
+        "signature": "async def _is_duplicate(self, content: str) -> bool:",
+        "start_line": 348,
+        "end_line": 381
+      },
+      {
+        "name": "MemoryStore.archive",
+        "type": "method",
+        "signature": "async def archive(self, memory_id: str) -> bool:",
+        "start_line": 383,
+        "end_line": 390
+      },
+      {
+        "name": "MemoryStore.update_confidence",
+        "type": "method",
+        "signature": "async def update_confidence(self, memory_id: str, confidence: float) -> bool:",
+        "start_line": 392,
+        "end_line": 399
+      },
+      {
+        "name": "MemoryStore.merge",
+        "type": "method",
+        "signature": "async def merge(self, keep_id: str, merge_id: str) -> bool:",
+        "start_line": 401,
+        "end_line": 417
+      },
+      {
+        "name": "MemoryStore.decay_importance",
+        "type": "method",
+        "signature": "async def decay_importance(self, days: int = 7, decay_factor: float = 0.95):",
+        "start_line": 419,
+        "end_line": 430
+      },
+      {
+        "name": "MemoryStore._row_to_memory",
+        "type": "method",
+        "signature": "def _row_to_memory(row: dict) -> Memory:",
+        "start_line": 437,
+        "end_line": 455
+      },
+      {
+        "name": "MemoryStore.get_semantic_profile",
+        "type": "method",
+        "signature": "async def get_semantic_profile(self, term: str) -> dict | None:",
+        "start_line": 460,
+        "end_line": 473
+      },
+      {
+        "name": "MemoryStore.save_semantic_profile",
+        "type": "method",
+        "signature": "async def save_semantic_profile(self, term: str, objective_proxies: list[str], confidence: float = 0.5):",
+        "start_line": 475,
+        "end_line": 488
+      },
+      {
+        "name": "MemoryStore.get_all_semantic_profiles",
+        "type": "method",
+        "signature": "async def get_all_semantic_profiles(self) -> dict[str, list[str]]:",
+        "start_line": 490,
+        "end_line": 493
+      }
+    ]
+  },
+  "src\\aria\\memory\\pruner.py": {
+    "sha256": "fbb09da03ada14792643299dc681dd25dab91b6fc2558495fc93cd2725fda0ed",
+    "symbols": [
+      {
+        "name": "ContextPruner",
+        "type": "class",
+        "signature": "class ContextPruner:",
+        "start_line": 17,
+        "end_line": 152
+      },
+      {
+        "name": "ContextPruner.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm: SupportsLLM):",
+        "start_line": 22,
+        "end_line": 23
+      },
+      {
+        "name": "ContextPruner.prune",
+        "type": "method",
+        "signature": "async def prune(self, turns: List[Turn], session_manager=None, memory_store=None, threshold: int = 10) -> List[Turn]:",
+        "start_line": 25,
+        "end_line": 104
+      },
+      {
+        "name": "ContextPruner.consolidate_memories",
+        "type": "method",
+        "signature": "async def consolidate_memories(self, memory_store):",
+        "start_line": 106,
+        "end_line": 152
+      }
+    ]
+  },
+  "src\\aria\\memory\\session.py": {
+    "sha256": "43df8a1fa11fe3a00b313e00fbb16203220a86d443bb7a166751fa30441f6e8d",
+    "symbols": [
+      {
+        "name": "SessionManager",
+        "type": "class",
+        "signature": "class SessionManager:",
+        "start_line": 22,
+        "end_line": 353
+      },
+      {
+        "name": "SessionManager.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 25,
+        "end_line": 26
+      },
+      {
+        "name": "SessionManager.current",
+        "type": "method",
+        "signature": "def current(self) -> Session | None:",
+        "start_line": 29,
+        "end_line": 30
+      },
+      {
+        "name": "SessionManager.start_session",
+        "type": "method",
+        "signature": "async def start_session(self) -> Session:",
+        "start_line": 36,
+        "end_line": 57
+      },
+      {
+        "name": "SessionManager.resume_or_start",
+        "type": "method",
+        "signature": "async def resume_or_start(self) -> Session:",
+        "start_line": 59,
+        "end_line": 73
+      },
+      {
+        "name": "SessionManager.resume_specific",
+        "type": "method",
+        "signature": "async def resume_specific(self, session_id: str) -> Session | None:",
+        "start_line": 75,
+        "end_line": 94
+      },
+      {
+        "name": "SessionManager.end_session",
+        "type": "method",
+        "signature": "async def end_session(self) -> None:",
+        "start_line": 96,
+        "end_line": 107
+      },
+      {
+        "name": "SessionManager.record_turn",
+        "type": "method",
+        "signature": "async def record_turn(",
+        "start_line": 113,
+        "end_line": 186
+      },
+      {
+        "name": "SessionManager.get_recent_turns",
+        "type": "method",
+        "signature": "async def get_recent_turns(self, limit: int = 10) -> list[Turn]:",
+        "start_line": 188,
+        "end_line": 206
+      },
+      {
+        "name": "SessionManager.compress_turns",
+        "type": "method",
+        "signature": "async def compress_turns(self, session_id: str, old_turn_ids: list[str], new_virtual_turn: Turn) -> None:",
+        "start_line": 208,
+        "end_line": 232
+      },
+      {
+        "name": "SessionManager.get_last_reflection",
+        "type": "method",
+        "signature": "async def get_last_reflection(self) -> str | None:",
+        "start_line": 234,
+        "end_line": 250
+      },
+      {
+        "name": "SessionManager.get_recent_failures",
+        "type": "method",
+        "signature": "async def get_recent_failures(self, limit: int = 3) -> list[dict]:",
+        "start_line": 252,
+        "end_line": 266
+      },
+      {
+        "name": "SessionManager.get_all_sessions",
+        "type": "method",
+        "signature": "async def get_all_sessions(self) -> list[Session]:",
+        "start_line": 268,
+        "end_line": 273
+      },
+      {
+        "name": "SessionManager.get_session",
+        "type": "method",
+        "signature": "async def get_session(self, session_id: str) -> Session | None:",
+        "start_line": 275,
+        "end_line": 281
+      },
+      {
+        "name": "SessionManager.get_turns_for_session",
+        "type": "method",
+        "signature": "async def get_turns_for_session(self, session_id: str) -> list[Turn]:",
+        "start_line": 283,
+        "end_line": 289
+      },
+      {
+        "name": "SessionManager.get_total_turns",
+        "type": "method",
+        "signature": "async def get_total_turns(self) -> int:",
+        "start_line": 291,
+        "end_line": 294
+      },
+      {
+        "name": "SessionManager.get_time_since_last_user_message",
+        "type": "method",
+        "signature": "async def get_time_since_last_user_message(self) -> float:",
+        "start_line": 296,
+        "end_line": 321
+      },
+      {
+        "name": "SessionManager._row_to_turn",
+        "type": "method",
+        "signature": "def _row_to_turn(row: dict) -> Turn:",
+        "start_line": 328,
+        "end_line": 340
+      },
+      {
+        "name": "SessionManager._row_to_session",
+        "type": "method",
+        "signature": "def _row_to_session(row: dict) -> Session:",
+        "start_line": 343,
+        "end_line": 353
+      }
+    ]
+  },
+  "src\\aria\\memory\\vector_store.py": {
+    "sha256": "9c946d44177cb0b68b2bbbdb26730a8c620c9a09d23162d1594510a641d85d80",
+    "symbols": [
+      {
+        "name": "VectorStore",
+        "type": "class",
+        "signature": "class VectorStore:",
+        "start_line": 24,
+        "end_line": 113
+      },
+      {
+        "name": "VectorStore.__init__",
+        "type": "method",
+        "signature": "def __init__(self, collection_name: str = \"aria_workspace\"):",
+        "start_line": 29,
+        "end_line": 47
+      },
+      {
+        "name": "VectorStore.is_active",
+        "type": "method",
+        "signature": "def is_active(self) -> bool:",
+        "start_line": 50,
+        "end_line": 51
+      },
+      {
+        "name": "VectorStore.add_chunks",
+        "type": "method",
+        "signature": "def add_chunks(self, texts: List[str], metadatas: List[Dict[str, Any]], ids: Optional[List[str]] = None):",
+        "start_line": 53,
+        "end_line": 66
+      },
+      {
+        "name": "VectorStore.search",
+        "type": "method",
+        "signature": "def search(self, query: str, n_results: int = 5) -> List[Dict[str, Any]]:",
+        "start_line": 68,
+        "end_line": 88
+      },
+      {
+        "name": "VectorStore.delete_by_path",
+        "type": "method",
+        "signature": "def delete_by_path(self, file_path: str):",
+        "start_line": 90,
+        "end_line": 95
+      },
+      {
+        "name": "VectorStore.delete_by_ids",
+        "type": "method",
+        "signature": "def delete_by_ids(self, ids: List[str]):",
+        "start_line": 97,
+        "end_line": 102
+      },
+      {
+        "name": "VectorStore.clear",
+        "type": "method",
+        "signature": "def clear(self):",
+        "start_line": 104,
+        "end_line": 113
+      }
+    ]
+  },
+  "src\\aria\\memory\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\models\\schemas.py": {
+    "sha256": "7821cf55034c74b0407678cd914543744f4f5e4ea8f9bedd5e8a8b6cf4b39a6f",
+    "symbols": [
+      {
+        "name": "MemorySource",
+        "type": "class",
+        "signature": "class MemorySource(str, Enum):",
+        "start_line": 29,
+        "end_line": 34
+      },
+      {
+        "name": "MemoryType",
+        "type": "class",
+        "signature": "class MemoryType(str, Enum):",
+        "start_line": 37,
+        "end_line": 45
+      },
+      {
+        "name": "VerificationStatus",
+        "type": "class",
+        "signature": "class VerificationStatus(str, Enum):",
+        "start_line": 48,
+        "end_line": 55
+      },
+      {
+        "name": "PlanStatus",
+        "type": "class",
+        "signature": "class PlanStatus(str, Enum):",
+        "start_line": 58,
+        "end_line": 63
+      },
+      {
+        "name": "ToolRisk",
+        "type": "class",
+        "signature": "class ToolRisk(str, Enum):",
+        "start_line": 66,
+        "end_line": 73
+      },
+      {
+        "name": "EthicalAction",
+        "type": "class",
+        "signature": "class EthicalAction(str, Enum):",
+        "start_line": 76,
+        "end_line": 80
+      },
+      {
+        "name": "GoalStatus",
+        "type": "class",
+        "signature": "class GoalStatus(str, Enum):",
+        "start_line": 83,
+        "end_line": 88
+      },
+      {
+        "name": "GoalPriority",
+        "type": "class",
+        "signature": "class GoalPriority(str, Enum):",
+        "start_line": 91,
+        "end_line": 96
+      },
+      {
+        "name": "EdgeType",
+        "type": "class",
+        "signature": "class EdgeType(str, Enum):",
+        "start_line": 99,
+        "end_line": 108
+      },
+      {
+        "name": "NodeType",
+        "type": "class",
+        "signature": "class NodeType(str, Enum):",
+        "start_line": 111,
+        "end_line": 117
+      },
+      {
+        "name": "Memory",
+        "type": "class",
+        "signature": "class Memory(BaseModel):",
+        "start_line": 124,
+        "end_line": 161
+      },
+      {
+        "name": "Memory.map_importance",
+        "type": "method",
+        "signature": "def map_importance(cls, v):",
+        "start_line": 140,
+        "end_line": 144
+      },
+      {
+        "name": "Goal",
+        "type": "class",
+        "signature": "class Goal(BaseModel):",
+        "start_line": 164,
+        "end_line": 177
+      },
+      {
+        "name": "Turn",
+        "type": "class",
+        "signature": "class Turn(BaseModel):",
+        "start_line": 180,
+        "end_line": 193
+      },
+      {
+        "name": "Session",
+        "type": "class",
+        "signature": "class Session(BaseModel):",
+        "start_line": 196,
+        "end_line": 207
+      },
+      {
+        "name": "Plan",
+        "type": "class",
+        "signature": "class Plan(BaseModel):",
+        "start_line": 210,
+        "end_line": 220
+      },
+      {
+        "name": "PlanStep",
+        "type": "class",
+        "signature": "class PlanStep(BaseModel):",
+        "start_line": 223,
+        "end_line": 233
+      },
+      {
+        "name": "KnowledgeNode",
+        "type": "class",
+        "signature": "class KnowledgeNode(BaseModel):",
+        "start_line": 240,
+        "end_line": 259
+      },
+      {
+        "name": "CausalEdge",
+        "type": "class",
+        "signature": "class CausalEdge(BaseModel):",
+        "start_line": 262,
+        "end_line": 275
+      },
+      {
+        "name": "StoredContradiction",
+        "type": "class",
+        "signature": "class StoredContradiction(BaseModel):",
+        "start_line": 278,
+        "end_line": 289
+      },
+      {
+        "name": "StoredHypothesis",
+        "type": "class",
+        "signature": "class StoredHypothesis(BaseModel):",
+        "start_line": 292,
+        "end_line": 302
+      },
+      {
+        "name": "NewMemory",
+        "type": "class",
+        "signature": "class NewMemory(BaseModel):",
+        "start_line": 309,
+        "end_line": 335
+      },
+      {
+        "name": "MemoryCluster",
+        "type": "class",
+        "signature": "class MemoryCluster(BaseModel):",
+        "start_line": 337,
+        "end_line": 339
+      },
+      {
+        "name": "ConsolidationResult",
+        "type": "class",
+        "signature": "class ConsolidationResult(BaseModel):",
+        "start_line": 341,
+        "end_line": 342
+      },
+      {
+        "name": "GoalUpdate",
+        "type": "class",
+        "signature": "class GoalUpdate(BaseModel):",
+        "start_line": 344,
+        "end_line": 359
+      },
+      {
+        "name": "CausalObservation",
+        "type": "class",
+        "signature": "class CausalObservation(BaseModel):",
+        "start_line": 366,
+        "end_line": 383
+      },
+      {
+        "name": "Contradiction",
+        "type": "class",
+        "signature": "class Contradiction(BaseModel):",
+        "start_line": 386,
+        "end_line": 396
+      },
+      {
+        "name": "Hypothesis",
+        "type": "class",
+        "signature": "class Hypothesis(BaseModel):",
+        "start_line": 399,
+        "end_line": 412
+      },
+      {
+        "name": "HypothesisResolution",
+        "type": "class",
+        "signature": "class HypothesisResolution(BaseModel):",
+        "start_line": 415,
+        "end_line": 427
+      },
+      {
+        "name": "UncertaintyTrackingEntry",
+        "type": "class",
+        "signature": "class UncertaintyTrackingEntry(BaseModel):",
+        "start_line": 430,
+        "end_line": 440
+      },
+      {
+        "name": "ToolCall",
+        "type": "class",
+        "signature": "class ToolCall(BaseModel):",
+        "start_line": 443,
+        "end_line": 450
+      },
+      {
+        "name": "EthicalDecision",
+        "type": "class",
+        "signature": "class EthicalDecision(BaseModel):",
+        "start_line": 453,
+        "end_line": 464
+      },
+      {
+        "name": "InlineProposal",
+        "type": "class",
+        "signature": "class InlineProposal(BaseModel):",
+        "start_line": 467,
+        "end_line": 471
+      },
+      {
+        "name": "CognitiveResponse",
+        "type": "class",
+        "signature": "class CognitiveResponse(BaseModel):",
+        "start_line": 474,
+        "end_line": 612
+      },
+      {
+        "name": "CritiqueScore",
+        "type": "class",
+        "signature": "class CritiqueScore(BaseModel):",
+        "start_line": 618,
+        "end_line": 622
+      },
+      {
+        "name": "CritiqueResponse",
+        "type": "class",
+        "signature": "class CritiqueResponse(BaseModel):",
+        "start_line": 624,
+        "end_line": 628
+      },
+      {
+        "name": "ImprovementLogEntry",
+        "type": "class",
+        "signature": "class ImprovementLogEntry(BaseModel):",
+        "start_line": 630,
+        "end_line": 641
+      },
+      {
+        "name": "DebateArgument",
+        "type": "class",
+        "signature": "class DebateArgument(BaseModel):",
+        "start_line": 647,
+        "end_line": 652
+      },
+      {
+        "name": "DebateResolution",
+        "type": "class",
+        "signature": "class DebateResolution(BaseModel):",
+        "start_line": 654,
+        "end_line": 663
+      },
+      {
+        "name": "UncertaintyTopic",
+        "type": "class",
+        "signature": "class UncertaintyTopic(BaseModel):",
+        "start_line": 665,
+        "end_line": 671
+      },
+      {
+        "name": "ToolResult",
+        "type": "class",
+        "signature": "class ToolResult(BaseModel):",
+        "start_line": 677,
+        "end_line": 683
+      },
+      {
+        "name": "ActionLogEntry",
+        "type": "class",
+        "signature": "class ActionLogEntry(BaseModel):",
+        "start_line": 685,
+        "end_line": 698
+      },
+      {
+        "name": "UniversalPrinciple",
+        "type": "class",
+        "signature": "class UniversalPrinciple(BaseModel):",
+        "start_line": 704,
+        "end_line": 718
+      },
+      {
+        "name": "PrincipleExtractionResponse",
+        "type": "class",
+        "signature": "class PrincipleExtractionResponse(BaseModel):",
+        "start_line": 720,
+        "end_line": 729
+      },
+      {
+        "name": "SelfImprovementProposal",
+        "type": "class",
+        "signature": "class SelfImprovementProposal(BaseModel):",
+        "start_line": 735,
+        "end_line": 746
+      },
+      {
+        "name": "MetaAnalysisResponse",
+        "type": "class",
+        "signature": "class MetaAnalysisResponse(BaseModel):",
+        "start_line": 748,
+        "end_line": 754
+      },
+      {
+        "name": "BenchmarkQuestion",
+        "type": "class",
+        "signature": "class BenchmarkQuestion(BaseModel):",
+        "start_line": 756,
+        "end_line": 760
+      },
+      {
+        "name": "BenchmarkResult",
+        "type": "class",
+        "signature": "class BenchmarkResult(BaseModel):",
+        "start_line": 762,
+        "end_line": 771
+      },
+      {
+        "name": "ExtractedFacts",
+        "type": "class",
+        "signature": "class ExtractedFacts(BaseModel):",
+        "start_line": 774,
+        "end_line": 776
+      }
+    ]
+  },
+  "src\\aria\\models\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\runtime\\settings.py": {
+    "sha256": "a5c32d527ebe7fbe78735313ad9b8b1d324c3a3c6b987e99893a153fcc1453ec",
+    "symbols": [
+      {
+        "name": "_now",
+        "type": "function",
+        "signature": "def _now() -> str:",
+        "start_line": 16,
+        "end_line": 17
+      },
+      {
+        "name": "_ensure_private_file",
+        "type": "function",
+        "signature": "def _ensure_private_file(path: Path) -> None:",
+        "start_line": 20,
+        "end_line": 40
+      },
+      {
+        "name": "_read_json",
+        "type": "function",
+        "signature": "def _read_json(path: Path, default: dict[str, Any]) -> dict[str, Any]:",
+        "start_line": 43,
+        "end_line": 49
+      },
+      {
+        "name": "_write_json",
+        "type": "function",
+        "signature": "def _write_json(path: Path, payload: dict[str, Any]) -> None:",
+        "start_line": 52,
+        "end_line": 59
+      },
+      {
+        "name": "default_settings",
+        "type": "function",
+        "signature": "def default_settings() -> dict[str, Any]:",
+        "start_line": 62,
+        "end_line": 94
+      },
+      {
+        "name": "default_secrets",
+        "type": "function",
+        "signature": "def default_secrets() -> dict[str, Any]:",
+        "start_line": 97,
+        "end_line": 103
+      },
+      {
+        "name": "RuntimeSettingsStore",
+        "type": "class",
+        "signature": "class RuntimeSettingsStore:",
+        "start_line": 106,
+        "end_line": 280
+      },
+      {
+        "name": "RuntimeSettingsStore.__init__",
+        "type": "method",
+        "signature": "def __init__(self, settings_path: Path = SETTINGS_PATH, secrets_path: Path = SECRETS_PATH):",
+        "start_line": 109,
+        "end_line": 113
+      },
+      {
+        "name": "RuntimeSettingsStore.load_settings",
+        "type": "method",
+        "signature": "def load_settings(self) -> dict[str, Any]:",
+        "start_line": 115,
+        "end_line": 124
+      },
+      {
+        "name": "RuntimeSettingsStore.save_settings",
+        "type": "method",
+        "signature": "def save_settings(self, payload: dict[str, Any]) -> dict[str, Any]:",
+        "start_line": 126,
+        "end_line": 141
+      },
+      {
+        "name": "RuntimeSettingsStore.load_secrets",
+        "type": "method",
+        "signature": "def load_secrets(self) -> dict[str, Any]:",
+        "start_line": 143,
+        "end_line": 148
+      },
+      {
+        "name": "RuntimeSettingsStore.save_secrets",
+        "type": "method",
+        "signature": "def save_secrets(self, payload: dict[str, Any]) -> dict[str, Any]:",
+        "start_line": 150,
+        "end_line": 157
+      },
+      {
+        "name": "RuntimeSettingsStore.get_provider_secret",
+        "type": "method",
+        "signature": "def get_provider_secret(self, provider: str, key: str = \"api_key\") -> str:",
+        "start_line": 159,
+        "end_line": 161
+      },
+      {
+        "name": "RuntimeSettingsStore.set_provider_secret",
+        "type": "method",
+        "signature": "def set_provider_secret(self, provider: str, value: str, key: str = \"api_key\") -> None:",
+        "start_line": 163,
+        "end_line": 168
+      },
+      {
+        "name": "RuntimeSettingsStore.get_web_api_key",
+        "type": "method",
+        "signature": "def get_web_api_key(self) -> str:",
+        "start_line": 170,
+        "end_line": 171
+      },
+      {
+        "name": "RuntimeSettingsStore.set_web_api_key",
+        "type": "method",
+        "signature": "def set_web_api_key(self, value: str) -> None:",
+        "start_line": 173,
+        "end_line": 174
+      },
+      {
+        "name": "RuntimeSettingsStore.ensure_web_api_key",
+        "type": "method",
+        "signature": "def ensure_web_api_key(self) -> str:",
+        "start_line": 176,
+        "end_line": 182
+      },
+      {
+        "name": "RuntimeSettingsStore.setup_status",
+        "type": "method",
+        "signature": "def setup_status(self) -> dict[str, Any]:",
+        "start_line": 184,
+        "end_line": 200
+      },
+      {
+        "name": "RuntimeSettingsStore.create_pair_code",
+        "type": "method",
+        "signature": "def create_pair_code(self, ttl_minutes: int = 10) -> str:",
+        "start_line": 202,
+        "end_line": 219
+      },
+      {
+        "name": "RuntimeSettingsStore.consume_pair_code",
+        "type": "method",
+        "signature": "def consume_pair_code(self, code: str, user_id: int, username: str | None = None) -> bool:",
+        "start_line": 221,
+        "end_line": 246
+      },
+      {
+        "name": "RuntimeSettingsStore.add_paired_telegram_user",
+        "type": "method",
+        "signature": "def add_paired_telegram_user(self, user_id: int, username: str | None = None) -> None:",
+        "start_line": 248,
+        "end_line": 261
+      },
+      {
+        "name": "RuntimeSettingsStore.revoke_telegram_user",
+        "type": "method",
+        "signature": "def revoke_telegram_user(self, user_id: int) -> None:",
+        "start_line": 263,
+        "end_line": 270
+      },
+      {
+        "name": "RuntimeSettingsStore.is_telegram_user_allowed",
+        "type": "method",
+        "signature": "def is_telegram_user_allowed(self, user_id: int) -> bool:",
+        "start_line": 272,
+        "end_line": 277
+      },
+      {
+        "name": "RuntimeSettingsStore.list_telegram_users",
+        "type": "method",
+        "signature": "def list_telegram_users(self) -> list[dict[str, Any]]:",
+        "start_line": 279,
+        "end_line": 280
+      }
+    ]
+  },
+  "src\\aria\\runtime\\usage.py": {
+    "sha256": "06e3d63fb979d28e544f8d0f1c4a8b7a0bd5e4d3a3198ddb211166b3df749219",
+    "symbols": [
+      {
+        "name": "utc_now",
+        "type": "function",
+        "signature": "def utc_now() -> str:",
+        "start_line": 10,
+        "end_line": 11
+      },
+      {
+        "name": "UsageTracker",
+        "type": "class",
+        "signature": "class UsageTracker:",
+        "start_line": 14,
+        "end_line": 100
+      },
+      {
+        "name": "UsageTracker.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 17,
+        "end_line": 18
+      },
+      {
+        "name": "UsageTracker.log_llm_call",
+        "type": "method",
+        "signature": "async def log_llm_call(",
+        "start_line": 20,
+        "end_line": 55
+      },
+      {
+        "name": "UsageTracker.summary",
+        "type": "method",
+        "signature": "async def summary(self) -> dict[str, Any]:",
+        "start_line": 57,
+        "end_line": 100
+      }
+    ]
+  },
+  "src\\aria\\runtime\\__init__.py": {
+    "sha256": "a5aeab97eb4045ff2ea15b7ef2b0c3e526f1a38955f13050c7a6dbbf5deb1b3a",
+    "symbols": []
+  },
+  "src\\aria\\storage\\database.py": {
+    "sha256": "cef72592333c12037f168bed3adf93660c9c360630afc378f915782c40ac5fe0",
+    "symbols": [
+      {
+        "name": "Database",
+        "type": "class",
+        "signature": "class Database:",
+        "start_line": 424,
+        "end_line": 512
+      },
+      {
+        "name": "Database.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db_path: str | None = None):",
+        "start_line": 427,
+        "end_line": 429
+      },
+      {
+        "name": "Database.connect",
+        "type": "method",
+        "signature": "async def connect(self) -> None:",
+        "start_line": 431,
+        "end_line": 447
+      },
+      {
+        "name": "Database._run_migrations",
+        "type": "method",
+        "signature": "async def _run_migrations(self) -> None:",
+        "start_line": 449,
+        "end_line": 456
+      },
+      {
+        "name": "Database.close",
+        "type": "method",
+        "signature": "async def close(self) -> None:",
+        "start_line": 458,
+        "end_line": 463
+      },
+      {
+        "name": "Database.conn",
+        "type": "method",
+        "signature": "def conn(self) -> aiosqlite.Connection:",
+        "start_line": 466,
+        "end_line": 470
+      },
+      {
+        "name": "Database.execute",
+        "type": "method",
+        "signature": "async def execute(self, sql: str, params: tuple = ()) -> aiosqlite.Cursor:",
+        "start_line": 472,
+        "end_line": 477
+      },
+      {
+        "name": "Database.transaction",
+        "type": "method",
+        "signature": "async def transaction(self):",
+        "start_line": 480,
+        "end_line": 498
+      },
+      {
+        "name": "Database.fetch_one",
+        "type": "method",
+        "signature": "async def fetch_one(self, sql: str, params: tuple = ()) -> dict | None:",
+        "start_line": 500,
+        "end_line": 506
+      },
+      {
+        "name": "Database.fetch_all",
+        "type": "method",
+        "signature": "async def fetch_all(self, sql: str, params: tuple = ()) -> list[dict]:",
+        "start_line": 508,
+        "end_line": 512
+      }
+    ]
+  },
+  "src\\aria\\storage\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\tools\\base.py": {
+    "sha256": "c4f67b48469635539e0c42af0bbf6145af2a36722faa057c827bb4e73706b7a6",
+    "symbols": [
+      {
+        "name": "BaseTool",
+        "type": "class",
+        "signature": "class BaseTool:",
+        "start_line": 8,
+        "end_line": 34
+      },
+      {
+        "name": "BaseTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 19,
+        "end_line": 24
+      },
+      {
+        "name": "BaseTool.get_prompt_description",
+        "type": "method",
+        "signature": "def get_prompt_description(cls) -> str:",
+        "start_line": 27,
+        "end_line": 34
+      }
+    ]
+  },
+  "src\\aria\\tools\\browser.py": {
+    "sha256": "6dc88fe264a7d5dc73cd89cad7fcd25c9cab3a88bcca24bc55974d9301f0c4ea",
+    "symbols": [
+      {
+        "name": "_validate_public_url",
+        "type": "function",
+        "signature": "def _validate_public_url(url: str) -> None:",
+        "start_line": 36,
+        "end_line": 62
+      },
+      {
+        "name": "_resolve_screenshot_path",
+        "type": "function",
+        "signature": "def _resolve_screenshot_path(filepath: str) -> Path:",
+        "start_line": 65,
+        "end_line": 75
+      },
+      {
+        "name": "BrowserTool",
+        "type": "class",
+        "signature": "class BrowserTool(BaseTool):",
+        "start_line": 77,
+        "end_line": 205
+      },
+      {
+        "name": "BrowserTool.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 92,
+        "end_line": 96
+      },
+      {
+        "name": "BrowserTool._ensure_started",
+        "type": "method",
+        "signature": "async def _ensure_started(self):",
+        "start_line": 98,
+        "end_line": 113
+      },
+      {
+        "name": "BrowserTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 115,
+        "end_line": 171
+      },
+      {
+        "name": "BrowserTool.close",
+        "type": "method",
+        "signature": "async def close(self):",
+        "start_line": 173,
+        "end_line": 182
+      },
+      {
+        "name": "BrowserTool._page_state",
+        "type": "method",
+        "signature": "async def _page_state(self) -> dict:",
+        "start_line": 184,
+        "end_line": 196
+      },
+      {
+        "name": "BrowserTool._observation",
+        "type": "method",
+        "signature": "async def _observation(self, action: str, result: str, **extra) -> str:",
+        "start_line": 198,
+        "end_line": 205
+      }
+    ]
+  },
+  "src\\aria\\tools\\code_editor.py": {
+    "sha256": "0149551f4c54663e0b8b6193e84445b07c623095117b72a5fd4e300beb70d807",
+    "symbols": [
+      {
+        "name": "_resolve_workspace_path",
+        "type": "function",
+        "signature": "def _resolve_workspace_path(file_path: str) -> Path:",
+        "start_line": 36,
+        "end_line": 61
+      },
+      {
+        "name": "CodeEditorTool",
+        "type": "class",
+        "signature": "class CodeEditorTool(BaseTool):",
+        "start_line": 64,
+        "end_line": 175
+      },
+      {
+        "name": "CodeEditorTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 89,
+        "end_line": 143
+      },
+      {
+        "name": "CodeEditorTool._apply_edit_logic",
+        "type": "method",
+        "signature": "def _apply_edit_logic(self, proposal: dict):",
+        "start_line": 145,
+        "end_line": 175
+      },
+      {
+        "name": "ApplyEditTool",
+        "type": "class",
+        "signature": "class ApplyEditTool(BaseTool):",
+        "start_line": 178,
+        "end_line": 236
+      },
+      {
+        "name": "ApplyEditTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 195,
+        "end_line": 236
+      }
+    ]
+  },
+  "src\\aria\\tools\\directives.py": {
+    "sha256": "840e5a458522fe174ab28cddeac79d0976e2f57b5d28fc62717fc18c592fd986",
+    "symbols": [
+      {
+        "name": "UpdateDirectivesTool",
+        "type": "class",
+        "signature": "class UpdateDirectivesTool(BaseTool):",
+        "start_line": 14,
+        "end_line": 78
+      },
+      {
+        "name": "UpdateDirectivesTool.__init__",
+        "type": "method",
+        "signature": "def __init__(self, llm):",
+        "start_line": 28,
+        "end_line": 30
+      },
+      {
+        "name": "UpdateDirectivesTool.get_prompt_description",
+        "type": "method",
+        "signature": "def get_prompt_description(self) -> str:",
+        "start_line": 32,
+        "end_line": 37
+      },
+      {
+        "name": "UpdateDirectivesTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, instruction: str) -> str:",
+        "start_line": 39,
+        "end_line": 78
+      }
+    ]
+  },
+  "src\\aria\\tools\\file_reader.py": {
+    "sha256": "61e916074218ed7abef3b2a8ea9d21ee8b0a9d46ee9dfe276229afe65cd17817",
+    "symbols": [
+      {
+        "name": "_is_path_safe",
+        "type": "function",
+        "signature": "def _is_path_safe(path: Path) -> tuple[bool, str]:",
+        "start_line": 35,
+        "end_line": 60
+      },
+      {
+        "name": "FileReaderTool",
+        "type": "class",
+        "signature": "class FileReaderTool(BaseTool):",
+        "start_line": 63,
+        "end_line": 114
+      },
+      {
+        "name": "FileReaderTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 75,
+        "end_line": 114
+      }
+    ]
+  },
+  "src\\aria\\tools\\memory.py": {
+    "sha256": "3db7a9427fbf2a982e934967370e63c523e9bfbb1c64d18cb357913e006079c5",
+    "symbols": [
+      {
+        "name": "SearchMemoryTool",
+        "type": "class",
+        "signature": "class SearchMemoryTool(BaseTool):",
+        "start_line": 10,
+        "end_line": 51
+      },
+      {
+        "name": "SearchMemoryTool.__init__",
+        "type": "method",
+        "signature": "def __init__(self, memory_store):",
+        "start_line": 24,
+        "end_line": 26
+      },
+      {
+        "name": "SearchMemoryTool.get_prompt_description",
+        "type": "method",
+        "signature": "def get_prompt_description(self) -> str:",
+        "start_line": 28,
+        "end_line": 33
+      },
+      {
+        "name": "SearchMemoryTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, query: str) -> str:",
+        "start_line": 35,
+        "end_line": 51
+      }
+    ]
+  },
+  "src\\aria\\tools\\phantom.py": {
+    "sha256": "63913435c77505ca9979e840482e2b421e7fcf861d7e6577d72b2e656867305d",
+    "symbols": [
+      {
+        "name": "_resolve_workspace_path",
+        "type": "function",
+        "signature": "def _resolve_workspace_path(file_path: str) -> Path:",
+        "start_line": 42,
+        "end_line": 54
+      },
+      {
+        "name": "PhantomTool",
+        "type": "class",
+        "signature": "class PhantomTool(BaseTool):",
+        "start_line": 57,
+        "end_line": 240
+      },
+      {
+        "name": "PhantomTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, *, file_path: str, proposed_content: str, **kwargs) -> str:",
+        "start_line": 81,
+        "end_line": 91
+      },
+      {
+        "name": "PhantomTool._run",
+        "type": "method",
+        "signature": "async def _run(",
+        "start_line": 93,
+        "end_line": 129
+      },
+      {
+        "name": "PhantomTool._check_python",
+        "type": "method",
+        "signature": "async def _check_python(phantom_file: Path, run_id: str) -> str:",
+        "start_line": 132,
+        "end_line": 157
+      },
+      {
+        "name": "PhantomTool._check_typescript",
+        "type": "method",
+        "signature": "async def _check_typescript(",
+        "start_line": 160,
+        "end_line": 240
+      }
+    ]
+  },
+  "src\\aria\\tools\\registry.py": {
+    "sha256": "28cd0950af622acc462f320bbeac2077e90d720176ec17f1ad18f1dff380af19",
+    "symbols": [
+      {
+        "name": "ToolRegistry",
+        "type": "class",
+        "signature": "class ToolRegistry:",
+        "start_line": 29,
+        "end_line": 302
+      },
+      {
+        "name": "ToolRegistry.__init__",
+        "type": "method",
+        "signature": "def __init__(self, vector_store=None, db=None, session_manager=None, memory_store=None, llm=None):",
+        "start_line": 32,
+        "end_line": 40
+      },
+      {
+        "name": "ToolRegistry._register_defaults",
+        "type": "method",
+        "signature": "def _register_defaults(self):",
+        "start_line": 42,
+        "end_line": 62
+      },
+      {
+        "name": "ToolRegistry.register",
+        "type": "method",
+        "signature": "def register(self, tool: BaseTool) -> None:",
+        "start_line": 64,
+        "end_line": 67
+      },
+      {
+        "name": "ToolRegistry.get_system_prompt_appendix",
+        "type": "method",
+        "signature": "def get_system_prompt_appendix(self) -> str:",
+        "start_line": 69,
+        "end_line": 78
+      },
+      {
+        "name": "ToolRegistry.execute",
+        "type": "method",
+        "signature": "async def execute(self, call: ToolCall, execution_mode: str = \"interactive\") -> ToolResult:",
+        "start_line": 80,
+        "end_line": 191
+      },
+      {
+        "name": "ToolRegistry._approval_required",
+        "type": "method",
+        "signature": "def _approval_required(self, tool: BaseTool) -> bool:",
+        "start_line": 193,
+        "end_line": 202
+      },
+      {
+        "name": "ToolRegistry._queue_approval",
+        "type": "method",
+        "signature": "async def _queue_approval(self, tool: BaseTool, args_dict: dict, reason: str) -> str:",
+        "start_line": 204,
+        "end_line": 227
+      },
+      {
+        "name": "ToolRegistry._log_ethical_decision",
+        "type": "method",
+        "signature": "async def _log_ethical_decision(self, call: ToolCall, decision) -> None:",
+        "start_line": 229,
+        "end_line": 254
+      },
+      {
+        "name": "ToolRegistry.get_pending_approvals",
+        "type": "method",
+        "signature": "async def get_pending_approvals(self) -> list[dict]:",
+        "start_line": 256,
+        "end_line": 261
+      },
+      {
+        "name": "ToolRegistry.resolve_approval",
+        "type": "method",
+        "signature": "async def resolve_approval(self, approval_id: str, status: str) -> bool:",
+        "start_line": 263,
+        "end_line": 302
+      }
+    ]
+  },
+  "src\\aria\\tools\\search.py": {
+    "sha256": "275604840f581f4f1f3a71a5fbe582611c71ef418295268b48df4259da9b3b56",
+    "symbols": [
+      {
+        "name": "WebSearchTool",
+        "type": "class",
+        "signature": "class WebSearchTool(BaseTool):",
+        "start_line": 14,
+        "end_line": 51
+      },
+      {
+        "name": "WebSearchTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 23,
+        "end_line": 51
+      },
+      {
+        "name": "SemanticSearchTool",
+        "type": "class",
+        "signature": "class SemanticSearchTool(BaseTool):",
+        "start_line": 53,
+        "end_line": 96
+      },
+      {
+        "name": "SemanticSearchTool.__init__",
+        "type": "method",
+        "signature": "def __init__(self, vector_store: VectorStore):",
+        "start_line": 62,
+        "end_line": 63
+      },
+      {
+        "name": "SemanticSearchTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, **kwargs) -> str:",
+        "start_line": 65,
+        "end_line": 96
+      }
+    ]
+  },
+  "src\\aria\\tools\\system.py": {
+    "sha256": "8e52b586264d82b8e726379fbbfe4eaeedf39a1b205f5945f4b06bd8b69677a6",
+    "symbols": [
+      {
+        "name": "_resolve_project_path",
+        "type": "function",
+        "signature": "def _resolve_project_path(path: str) -> Path:",
+        "start_line": 28,
+        "end_line": 39
+      },
+      {
+        "name": "ListDirectoryTool",
+        "type": "class",
+        "signature": "class ListDirectoryTool(BaseTool):",
+        "start_line": 41,
+        "end_line": 85
+      },
+      {
+        "name": "ListDirectoryTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, path: str = \".\") -> str:",
+        "start_line": 54,
+        "end_line": 85
+      },
+      {
+        "name": "RunTerminalCommandTool",
+        "type": "class",
+        "signature": "class RunTerminalCommandTool(BaseTool):",
+        "start_line": 88,
+        "end_line": 177
+      },
+      {
+        "name": "RunTerminalCommandTool.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 106,
+        "end_line": 112
+      },
+      {
+        "name": "RunTerminalCommandTool.execute",
+        "type": "method",
+        "signature": "async def execute(self, command: str) -> str:",
+        "start_line": 114,
+        "end_line": 177
+      }
+    ]
+  },
+  "src\\aria\\tools\\__init__.py": {
+    "sha256": "6aa05d0b9b650b56a4ab8be577ce4a64db324d5cdd94f4b8de3aafc18b0dd058",
+    "symbols": []
+  },
+  "src\\aria\\ui\\onboarding.py": {
+    "sha256": "e22e9236c40e908a96e5b10a87380c06edc6d83a6d8be00ae0d4a04cf9cb85f0",
+    "symbols": [
+      {
+        "name": "OnboardingUI",
+        "type": "class",
+        "signature": "class OnboardingUI:",
+        "start_line": 11,
+        "end_line": 176
+      },
+      {
+        "name": "OnboardingUI.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 17,
+        "end_line": 21
+      },
+      {
+        "name": "OnboardingUI.clear",
+        "type": "method",
+        "signature": "def clear(self):",
+        "start_line": 23,
+        "end_line": 25
+      },
+      {
+        "name": "OnboardingUI.create_slab",
+        "type": "method",
+        "signature": "def create_slab(",
+        "start_line": 27,
+        "end_line": 64
+      },
+      {
+        "name": "OnboardingUI.render_step",
+        "type": "method",
+        "signature": "def render_step(self, title: str, content: RenderableType, subtitle: str | None = None):",
+        "start_line": 66,
+        "end_line": 70
+      },
+      {
+        "name": "OnboardingUI.prompt",
+        "type": "method",
+        "signature": "def prompt(self, text: str, default: str = \"\", password: bool = False) -> str:",
+        "start_line": 72,
+        "end_line": 80
+      },
+      {
+        "name": "OnboardingUI.prompt_choice",
+        "type": "method",
+        "signature": "def prompt_choice(self, title: str, choices: list[str], subtitle: str | None = None) -> int:",
+        "start_line": 82,
+        "end_line": 176
+      }
+    ]
+  },
+  "src\\aria\\ui\\terminal.py": {
+    "sha256": "e6c92fa904bbe685622c398ac1bb08f4477f5e80cdc1eae5b384e094ade34e3c",
+    "symbols": [
+      {
+        "name": "show_banner",
+        "type": "function",
+        "signature": "def show_banner() -> None:",
+        "start_line": 63,
+        "end_line": 97
+      },
+      {
+        "name": "show_startup_summary",
+        "type": "function",
+        "signature": "def show_startup_summary(memory_count: int, goal_count: int, session_count: int, total_turns: int) -> None:",
+        "start_line": 100,
+        "end_line": 154
+      },
+      {
+        "name": "show_response",
+        "type": "function",
+        "signature": "def show_response(cognitive: CognitiveResponse) -> None:",
+        "start_line": 157,
+        "end_line": 231
+      },
+      {
+        "name": "show_memories",
+        "type": "function",
+        "signature": "def show_memories(memories: list[Memory]) -> None:",
+        "start_line": 234,
+        "end_line": 271
+      },
+      {
+        "name": "show_search_results",
+        "type": "function",
+        "signature": "def show_search_results(memories: list[Memory], query: str) -> None:",
+        "start_line": 274,
+        "end_line": 300
+      },
+      {
+        "name": "show_goals",
+        "type": "function",
+        "signature": "def show_goals(goals: list[Goal]) -> None:",
+        "start_line": 303,
+        "end_line": 348
+      },
+      {
+        "name": "show_stats",
+        "type": "function",
+        "signature": "def show_stats(info: dict) -> None:",
+        "start_line": 351,
+        "end_line": 374
+      },
+      {
+        "name": "show_sessions",
+        "type": "function",
+        "signature": "def show_sessions(sessions: list[Session]) -> None:",
+        "start_line": 377,
+        "end_line": 411
+      },
+      {
+        "name": "show_help",
+        "type": "function",
+        "signature": "def show_help() -> None:",
+        "start_line": 414,
+        "end_line": 476
+      },
+      {
+        "name": "show_error",
+        "type": "function",
+        "signature": "def show_error(message: str) -> None:",
+        "start_line": 479,
+        "end_line": 481
+      },
+      {
+        "name": "show_warning",
+        "type": "function",
+        "signature": "def show_warning(message: str) -> None:",
+        "start_line": 484,
+        "end_line": 486
+      },
+      {
+        "name": "show_success",
+        "type": "function",
+        "signature": "def show_success(message: str) -> None:",
+        "start_line": 489,
+        "end_line": 491
+      },
+      {
+        "name": "show_info",
+        "type": "function",
+        "signature": "def show_info(message: str) -> None:",
+        "start_line": 494,
+        "end_line": 496
+      },
+      {
+        "name": "show_graph_stats",
+        "type": "function",
+        "signature": "def show_graph_stats(stats: dict) -> None:",
+        "start_line": 503,
+        "end_line": 528
+      },
+      {
+        "name": "show_graph_neighborhood",
+        "type": "function",
+        "signature": "def show_graph_neighborhood(data: dict) -> None:",
+        "start_line": 531,
+        "end_line": 565
+      },
+      {
+        "name": "show_causal_chain",
+        "type": "function",
+        "signature": "def show_causal_chain(chain: list[dict], from_concept: str, to_concept: str) -> None:",
+        "start_line": 568,
+        "end_line": 595
+      },
+      {
+        "name": "show_contradictions",
+        "type": "function",
+        "signature": "def show_contradictions(contradictions) -> None:",
+        "start_line": 598,
+        "end_line": 623
+      },
+      {
+        "name": "show_hypotheses",
+        "type": "function",
+        "signature": "def show_hypotheses(hypotheses) -> None:",
+        "start_line": 626,
+        "end_line": 660
+      },
+      {
+        "name": "show_improvements",
+        "type": "function",
+        "signature": "def show_improvements(improvements) -> None:",
+        "start_line": 663,
+        "end_line": 692
+      },
+      {
+        "name": "show_debate_resolution",
+        "type": "function",
+        "signature": "def show_debate_resolution(resolution) -> None:",
+        "start_line": 695,
+        "end_line": 707
+      },
+      {
+        "name": "show_uncertainties",
+        "type": "function",
+        "signature": "def show_uncertainties(uncertainties) -> None:",
+        "start_line": 709,
+        "end_line": 733
+      },
+      {
+        "name": "show_tools",
+        "type": "function",
+        "signature": "def show_tools(registry) -> None:",
+        "start_line": 735,
+        "end_line": 761
+      },
+      {
+        "name": "show_principles",
+        "type": "function",
+        "signature": "def show_principles(principles) -> None:",
+        "start_line": 763,
+        "end_line": 794
+      },
+      {
+        "name": "show_proposals",
+        "type": "function",
+        "signature": "def show_proposals(proposals) -> None:",
+        "start_line": 797,
+        "end_line": 817
+      },
+      {
+        "name": "show_benchmark_result",
+        "type": "function",
+        "signature": "def show_benchmark_result(result) -> None:",
+        "start_line": 820,
+        "end_line": 850
+      },
+      {
+        "name": "show_meta_proposal",
+        "type": "function",
+        "signature": "def show_meta_proposal(proposal) -> None:",
+        "start_line": 853,
+        "end_line": 873
+      },
+      {
+        "name": "get_input",
+        "type": "function",
+        "signature": "def get_input() -> str:",
+        "start_line": 876,
+        "end_line": 881
+      }
+    ]
+  },
+  "src\\aria\\ui\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\utils\\config.py": {
+    "sha256": "3dfa71a29abb58d8b253f69992087609ca9eccbad2f1111d4570ab8efbeaee57",
+    "symbols": [
+      {
+        "name": "ensure_vyn_home",
+        "type": "function",
+        "signature": "def ensure_vyn_home() -> None:",
+        "start_line": 65,
+        "end_line": 152
+      },
+      {
+        "name": "get_settings_store",
+        "type": "function",
+        "signature": "def get_settings_store() -> \"RuntimeSettingsStore\":",
+        "start_line": 167,
+        "end_line": 172
+      },
+      {
+        "name": "get_provider_settings",
+        "type": "function",
+        "signature": "def get_provider_settings(settings_store = None) -> dict:",
+        "start_line": 175,
+        "end_line": 224
+      },
+      {
+        "name": "get_provider_secret",
+        "type": "function",
+        "signature": "def get_provider_secret(provider_id: str, settings_store = None) -> str | None:",
+        "start_line": 227,
+        "end_line": 241
+      },
+      {
+        "name": "get_api_key",
+        "type": "function",
+        "signature": "def get_api_key() -> str:",
+        "start_line": 244,
+        "end_line": 253
+      },
+      {
+        "name": "get_model",
+        "type": "function",
+        "signature": "def get_model() -> str:",
+        "start_line": 256,
+        "end_line": 258
+      },
+      {
+        "name": "get_log_level",
+        "type": "function",
+        "signature": "def get_log_level() -> str:",
+        "start_line": 261,
+        "end_line": 263
+      },
+      {
+        "name": "env_flag",
+        "type": "function",
+        "signature": "def env_flag(name: str, default: bool = False) -> bool:",
+        "start_line": 266,
+        "end_line": 271
+      },
+      {
+        "name": "_saved_security_flag",
+        "type": "function",
+        "signature": "def _saved_security_flag(name: str, default: bool) -> bool:",
+        "start_line": 274,
+        "end_line": 276
+      },
+      {
+        "name": "terminal_execution_enabled",
+        "type": "function",
+        "signature": "def terminal_execution_enabled() -> bool:",
+        "start_line": 279,
+        "end_line": 281
+      },
+      {
+        "name": "code_apply_enabled",
+        "type": "function",
+        "signature": "def code_apply_enabled() -> bool:",
+        "start_line": 284,
+        "end_line": 286
+      },
+      {
+        "name": "browser_actions_enabled",
+        "type": "function",
+        "signature": "def browser_actions_enabled() -> bool:",
+        "start_line": 289,
+        "end_line": 291
+      },
+      {
+        "name": "background_actions_enabled",
+        "type": "function",
+        "signature": "def background_actions_enabled() -> bool:",
+        "start_line": 294,
+        "end_line": 296
+      },
+      {
+        "name": "require_tool_approvals",
+        "type": "function",
+        "signature": "def require_tool_approvals() -> bool:",
+        "start_line": 299,
+        "end_line": 301
+      },
+      {
+        "name": "max_tool_calls_per_turn",
+        "type": "function",
+        "signature": "def max_tool_calls_per_turn() -> int:",
+        "start_line": 304,
+        "end_line": 309
+      },
+      {
+        "name": "get_process_role",
+        "type": "function",
+        "signature": "def get_process_role() -> str:",
+        "start_line": 312,
+        "end_line": 314
+      },
+      {
+        "name": "allow_multi_writer",
+        "type": "function",
+        "signature": "def allow_multi_writer() -> bool:",
+        "start_line": 317,
+        "end_line": 319
+      },
+      {
+        "name": "get_web_host",
+        "type": "function",
+        "signature": "def get_web_host() -> str:",
+        "start_line": 322,
+        "end_line": 323
+      },
+      {
+        "name": "get_web_port",
+        "type": "function",
+        "signature": "def get_web_port() -> int:",
+        "start_line": 326,
+        "end_line": 330
+      },
+      {
+        "name": "get_web_api_key",
+        "type": "function",
+        "signature": "def get_web_api_key() -> str:",
+        "start_line": 333,
+        "end_line": 337
+      },
+      {
+        "name": "get_web_allowed_origins",
+        "type": "function",
+        "signature": "def get_web_allowed_origins() -> list[str]:",
+        "start_line": 340,
+        "end_line": 345
+      },
+      {
+        "name": "telegram_public_mode_enabled",
+        "type": "function",
+        "signature": "def telegram_public_mode_enabled() -> bool:",
+        "start_line": 348,
+        "end_line": 350
+      },
+      {
+        "name": "autonomy_policy_snapshot",
+        "type": "function",
+        "signature": "def autonomy_policy_snapshot() -> dict:",
+        "start_line": 353,
+        "end_line": 365
+      }
+    ]
+  },
+  "src\\aria\\utils\\dashboard_static.py": {
+    "sha256": "0faad09e434064bbd4d33ce2522411cb9a8b38f79eb1184266e5f54b5b393abb",
+    "symbols": [
+      {
+        "name": "resolve_dashboard_dir",
+        "type": "function",
+        "signature": "def resolve_dashboard_dir(*, packaged_aria_pkg: Path, repo_root_from_scripts: Path) -> Path | None:",
+        "start_line": 8,
+        "end_line": 46
+      }
+    ]
+  },
+  "src\\aria\\utils\\logger.py": {
+    "sha256": "40cd6e7d6741b56ee9b7d44e19319b0bbcbfef7126f33357b1b1c7421c7c89ea",
+    "symbols": [
+      {
+        "name": "setup_logger",
+        "type": "function",
+        "signature": "def setup_logger(name: str = \"aria\", level: str = \"INFO\") -> logging.Logger:",
+        "start_line": 16,
+        "end_line": 43
+      }
+    ]
+  },
+  "src\\aria\\utils\\sanitize.py": {
+    "sha256": "caecf2fb166f0e54be90df98de5a64b27e706440fbe347f1758a8f49cf616ed5",
+    "symbols": [
+      {
+        "name": "sanitize_for_injection",
+        "type": "function",
+        "signature": "def sanitize_for_injection(text: str | None) -> str:",
+        "start_line": 4,
+        "end_line": 19
+      }
+    ]
+  },
+  "src\\aria\\utils\\telegram_pairing.py": {
+    "sha256": "a41b8214bc85281f47a56bbb63ad0587443bfe7b34ff88f6a55704beb730c850",
+    "symbols": [
+      {
+        "name": "TelegramPairingSession",
+        "type": "class",
+        "signature": "class TelegramPairingSession:",
+        "start_line": 9,
+        "end_line": 84
+      },
+      {
+        "name": "TelegramPairingSession.__init__",
+        "type": "method",
+        "signature": "def __init__(self, bot_token: str):",
+        "start_line": 14,
+        "end_line": 18
+      },
+      {
+        "name": "TelegramPairingSession.get_bot_info",
+        "type": "method",
+        "signature": "async def get_bot_info(self) -> dict[str, Any]:",
+        "start_line": 20,
+        "end_line": 28
+      },
+      {
+        "name": "TelegramPairingSession.get_deep_link",
+        "type": "method",
+        "signature": "def get_deep_link(self) -> str:",
+        "start_line": 30,
+        "end_line": 34
+      },
+      {
+        "name": "TelegramPairingSession.wait_for_handshake",
+        "type": "method",
+        "signature": "async def wait_for_handshake(self, timeout_s: int = 120) -> int:",
+        "start_line": 36,
+        "end_line": 72
+      },
+      {
+        "name": "TelegramPairingSession.send_greeting",
+        "type": "method",
+        "signature": "async def send_greeting(self, chat_id: int):",
+        "start_line": 74,
+        "end_line": 84
+      }
+    ]
+  },
+  "src\\aria\\utils\\telemetry.py": {
+    "sha256": "f018a713054206f1e6094feffbe728260a1f777671fafb0bfa5f7dedc9561c18",
+    "symbols": [
+      {
+        "name": "JSONLFileSpanExporter",
+        "type": "class",
+        "signature": "class JSONLFileSpanExporter(SpanProcessor):",
+        "start_line": 10,
+        "end_line": 39
+      },
+      {
+        "name": "JSONLFileSpanExporter.__init__",
+        "type": "method",
+        "signature": "def __init__(self, filename: str = \"telemetry_traces.jsonl\"):",
+        "start_line": 12,
+        "end_line": 13
+      },
+      {
+        "name": "JSONLFileSpanExporter.on_end",
+        "type": "method",
+        "signature": "def on_end(self, span: ReadableSpan) -> None:",
+        "start_line": 15,
+        "end_line": 33
+      },
+      {
+        "name": "JSONLFileSpanExporter.shutdown",
+        "type": "method",
+        "signature": "def shutdown(self) -> None:",
+        "start_line": 35,
+        "end_line": 36
+      },
+      {
+        "name": "JSONLFileSpanExporter.force_flush",
+        "type": "method",
+        "signature": "def force_flush(self, timeout_millis: int = 30000) -> bool:",
+        "start_line": 38,
+        "end_line": 39
+      }
+    ]
+  },
+  "src\\aria\\utils\\__init__.py": {
+    "sha256": "16d43de0c2b3cba07a59531175e9620a89497c50d55562d2a52ff0683562debd",
+    "symbols": []
+  },
+  "src\\aria\\world\\code_parser.py": {
+    "sha256": "718f3035e80e0daef37db57993a1eb26289fbaf8f72d29fcca6bbba09ec8f082",
+    "symbols": [
+      {
+        "name": "CodeChunk",
+        "type": "class",
+        "signature": "class CodeChunk:",
+        "start_line": 28,
+        "end_line": 35
+      },
+      {
+        "name": "CodeParser",
+        "type": "class",
+        "signature": "class CodeParser:",
+        "start_line": 38,
+        "end_line": 272
+      },
+      {
+        "name": "CodeParser.__init__",
+        "type": "method",
+        "signature": "def __init__(self):",
+        "start_line": 41,
+        "end_line": 50
+      },
+      {
+        "name": "CodeParser.parse_file",
+        "type": "method",
+        "signature": "def parse_file(self, file_path: str, root_dir: str = \"\") -> List[CodeChunk]:",
+        "start_line": 52,
+        "end_line": 79
+      },
+      {
+        "name": "CodeParser._get_language_key",
+        "type": "method",
+        "signature": "def _get_language_key(self, ext: str) -> Optional[str]:",
+        "start_line": 81,
+        "end_line": 90
+      },
+      {
+        "name": "CodeParser._parse_ast",
+        "type": "method",
+        "signature": "def _parse_ast(self, content: str, lang_key: str, rel_path: str) -> List[CodeChunk]:",
+        "start_line": 92,
+        "end_line": 220
+      },
+      {
+        "name": "CodeParser._parse_fallback",
+        "type": "method",
+        "signature": "def _parse_fallback(self, content: str, rel_path: str) -> List[CodeChunk]:",
+        "start_line": 222,
+        "end_line": 272
+      }
+    ]
+  },
+  "src\\aria\\world\\contradictions.py": {
+    "sha256": "960ff6dc58bc070ed262b446ed8ea804520308823de4baac3cb056518237e302",
+    "symbols": [
+      {
+        "name": "ContradictionDetector",
+        "type": "class",
+        "signature": "class ContradictionDetector:",
+        "start_line": 34,
+        "end_line": 178
+      },
+      {
+        "name": "ContradictionDetector.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database, graph: KnowledgeGraph):",
+        "start_line": 37,
+        "end_line": 39
+      },
+      {
+        "name": "ContradictionDetector.process_contradiction",
+        "type": "method",
+        "signature": "async def process_contradiction(self, contradiction: Contradiction) -> StoredContradiction | None:",
+        "start_line": 41,
+        "end_line": 132
+      },
+      {
+        "name": "ContradictionDetector.get_unresolved",
+        "type": "method",
+        "signature": "async def get_unresolved(self) -> list[StoredContradiction]:",
+        "start_line": 134,
+        "end_line": 139
+      },
+      {
+        "name": "ContradictionDetector.get_all",
+        "type": "method",
+        "signature": "async def get_all(self) -> list[StoredContradiction]:",
+        "start_line": 141,
+        "end_line": 146
+      },
+      {
+        "name": "ContradictionDetector.resolve",
+        "type": "method",
+        "signature": "async def resolve(self, contradiction_id: str, resolution: str) -> None:",
+        "start_line": 148,
+        "end_line": 158
+      },
+      {
+        "name": "ContradictionDetector.count_unresolved",
+        "type": "method",
+        "signature": "async def count_unresolved(self) -> int:",
+        "start_line": 160,
+        "end_line": 165
+      },
+      {
+        "name": "ContradictionDetector._row_to_contradiction",
+        "type": "method",
+        "signature": "def _row_to_contradiction(row: dict) -> StoredContradiction:",
+        "start_line": 168,
+        "end_line": 178
+      }
+    ]
+  },
+  "src\\aria\\world\\graph.py": {
+    "sha256": "4e351c0552b11b29bcdccb2a236305d88a353dc693d012937372a8f67a6b66d5",
+    "symbols": [
+      {
+        "name": "KnowledgeGraph",
+        "type": "class",
+        "signature": "class KnowledgeGraph:",
+        "start_line": 37,
+        "end_line": 790
+      },
+      {
+        "name": "KnowledgeGraph.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database):",
+        "start_line": 45,
+        "end_line": 49
+      },
+      {
+        "name": "KnowledgeGraph.load",
+        "type": "method",
+        "signature": "async def load(self) -> None:",
+        "start_line": 55,
+        "end_line": 99
+      },
+      {
+        "name": "KnowledgeGraph.load_relevant",
+        "type": "method",
+        "signature": "async def load_relevant(self, query: str | None, max_nodes: int = 200) -> None:",
+        "start_line": 101,
+        "end_line": 177
+      },
+      {
+        "name": "KnowledgeGraph._rebuild_word_index",
+        "type": "method",
+        "signature": "def _rebuild_word_index(self) -> None:",
+        "start_line": 179,
+        "end_line": 183
+      },
+      {
+        "name": "KnowledgeGraph._index_node",
+        "type": "method",
+        "signature": "def _index_node(self, node_id: str, content: str) -> None:",
+        "start_line": 185,
+        "end_line": 191
+      },
+      {
+        "name": "KnowledgeGraph.add_node",
+        "type": "method",
+        "signature": "async def add_node(self, node: KnowledgeNode) -> KnowledgeNode:",
+        "start_line": 197,
+        "end_line": 244
+      },
+      {
+        "name": "KnowledgeGraph.find_similar_node",
+        "type": "method",
+        "signature": "async def find_similar_node(self, content: str, threshold: float = 0.8) -> str | None:",
+        "start_line": 246,
+        "end_line": 320
+      },
+      {
+        "name": "KnowledgeGraph._reinforce_node",
+        "type": "method",
+        "signature": "async def _reinforce_node(self, node_id: str) -> None:",
+        "start_line": 322,
+        "end_line": 335
+      },
+      {
+        "name": "KnowledgeGraph.update_confidence",
+        "type": "method",
+        "signature": "async def update_confidence(self, node_id: str, new_confidence: float) -> None:",
+        "start_line": 337,
+        "end_line": 344
+      },
+      {
+        "name": "KnowledgeGraph.increment_contradictions",
+        "type": "method",
+        "signature": "async def increment_contradictions(self, node_id: str) -> None:",
+        "start_line": 346,
+        "end_line": 357
+      },
+      {
+        "name": "KnowledgeGraph.get_node",
+        "type": "method",
+        "signature": "def get_node(self, node_id: str) -> dict | None:",
+        "start_line": 359,
+        "end_line": 363
+      },
+      {
+        "name": "KnowledgeGraph._get_node_model",
+        "type": "method",
+        "signature": "def _get_node_model(self, node_id: str) -> KnowledgeNode:",
+        "start_line": 365,
+        "end_line": 380
+      },
+      {
+        "name": "KnowledgeGraph.remove_nodes_by_source",
+        "type": "method",
+        "signature": "async def remove_nodes_by_source(self, source: str) -> int:",
+        "start_line": 382,
+        "end_line": 416
+      },
+      {
+        "name": "KnowledgeGraph.add_edge",
+        "type": "method",
+        "signature": "async def add_edge(self, edge: CausalEdge) -> CausalEdge:",
+        "start_line": 422,
+        "end_line": 477
+      },
+      {
+        "name": "KnowledgeGraph.get_neighborhood",
+        "type": "method",
+        "signature": "async def get_neighborhood(self, node_id: str, depth: int = 2) -> dict:",
+        "start_line": 483,
+        "end_line": 562
+      },
+      {
+        "name": "KnowledgeGraph.find_causal_chain",
+        "type": "method",
+        "signature": "async def find_causal_chain(self, source_id: str, target_id: str) -> list[dict] | None:",
+        "start_line": 564,
+        "end_line": 616
+      },
+      {
+        "name": "KnowledgeGraph.find_node_by_content",
+        "type": "method",
+        "signature": "def find_node_by_content(self, query: str) -> str | None:",
+        "start_line": 618,
+        "end_line": 639
+      },
+      {
+        "name": "KnowledgeGraph.get_contradicting_nodes",
+        "type": "method",
+        "signature": "def get_contradicting_nodes(self, node_id: str) -> list[dict]:",
+        "start_line": 641,
+        "end_line": 650
+      },
+      {
+        "name": "KnowledgeGraph.retrieve_relevant_context",
+        "type": "method",
+        "signature": "async def retrieve_relevant_context(self, query: str, max_nodes: int = 15) -> list[dict]:",
+        "start_line": 656,
+        "end_line": 739
+      },
+      {
+        "name": "KnowledgeGraph.stats",
+        "type": "method",
+        "signature": "async def stats(self) -> dict:",
+        "start_line": 745,
+        "end_line": 790
+      }
+    ]
+  },
+  "src\\aria\\world\\hypotheses.py": {
+    "sha256": "1dc681edd8b2b92306fbcf23eebf52fc0d55717b2eaedfacd5f1508ed4c2722d",
+    "symbols": [
+      {
+        "name": "HypothesisEngine",
+        "type": "class",
+        "signature": "class HypothesisEngine:",
+        "start_line": 23,
+        "end_line": 147
+      },
+      {
+        "name": "HypothesisEngine.__init__",
+        "type": "method",
+        "signature": "def __init__(self, db: Database, graph: KnowledgeGraph):",
+        "start_line": 26,
+        "end_line": 28
+      },
+      {
+        "name": "HypothesisEngine.store_hypothesis",
+        "type": "method",
+        "signature": "async def store_hypothesis(self, hypothesis: HypothesisOutput) -> StoredHypothesis:",
+        "start_line": 30,
+        "end_line": 59
+      },
+      {
+        "name": "HypothesisEngine.confirm",
+        "type": "method",
+        "signature": "async def confirm(self, hypothesis_id: str) -> None:",
+        "start_line": 61,
+        "end_line": 72
+      },
+      {
+        "name": "HypothesisEngine.deny",
+        "type": "method",
+        "signature": "async def deny(self, hypothesis_id: str) -> None:",
+        "start_line": 74,
+        "end_line": 85
+      },
+      {
+        "name": "HypothesisEngine.get_pending",
+        "type": "method",
+        "signature": "async def get_pending(self) -> list[StoredHypothesis]:",
+        "start_line": 87,
+        "end_line": 92
+      },
+      {
+        "name": "HypothesisEngine.get_by_id",
+        "type": "method",
+        "signature": "async def get_by_id(self, hypothesis_id: str) -> StoredHypothesis | None:",
+        "start_line": 94,
+        "end_line": 101
+      },
+      {
+        "name": "HypothesisEngine.get_all",
+        "type": "method",
+        "signature": "async def get_all(self) -> list[StoredHypothesis]:",
+        "start_line": 103,
+        "end_line": 108
+      },
+      {
+        "name": "HypothesisEngine.count_pending",
+        "type": "method",
+        "signature": "async def count_pending(self) -> int:",
+        "start_line": 110,
+        "end_line": 115
+      },
+      {
+        "name": "HypothesisEngine._find_similar",
+        "type": "method",
+        "signature": "async def _find_similar(self, claim: str) -> StoredHypothesis | None:",
+        "start_line": 117,
+        "end_line": 135
+      },
+      {
+        "name": "HypothesisEngine._row_to_hypothesis",
+        "type": "method",
+        "signature": "def _row_to_hypothesis(row: dict) -> StoredHypothesis:",
+        "start_line": 138,
+        "end_line": 147
+      }
+    ]
+  },
+  "src\\aria\\world\\repo_map.py": {
+    "sha256": "e4edf473998d06bd1a95921483c60d9672e5895340bbfdf7cfebcfad719fc496",
+    "symbols": [
+      {
+        "name": "RepoMap",
+        "type": "class",
+        "signature": "class RepoMap:",
+        "start_line": 29,
+        "end_line": 235
+      },
+      {
+        "name": "RepoMap.__init__",
+        "type": "method",
+        "signature": "def __init__(self, root_dir: str, cache_path: Optional[str] = None):",
+        "start_line": 34,
+        "end_line": 39
+      },
+      {
+        "name": "RepoMap._load_cache",
+        "type": "method",
+        "signature": "def _load_cache(self):",
+        "start_line": 41,
+        "end_line": 51
+      },
+      {
+        "name": "RepoMap.save_cache",
+        "type": "method",
+        "signature": "def save_cache(self):",
+        "start_line": 53,
+        "end_line": 60
+      },
+      {
+        "name": "RepoMap.build",
+        "type": "method",
+        "signature": "def build(self, force: bool = False):",
+        "start_line": 62,
+        "end_line": 114
+      },
+      {
+        "name": "RepoMap.get_relevant_map",
+        "type": "method",
+        "signature": "def get_relevant_map(self, query: str = \"\", max_chars: int = 8000) -> str:",
+        "start_line": 116,
+        "end_line": 197
+      },
+      {
+        "name": "RepoMap._rank_files",
+        "type": "method",
+        "signature": "def _rank_files(self, query: str) -> List[str]:",
+        "start_line": 199,
+        "end_line": 227
+      },
+      {
+        "name": "RepoMap._get_sha256",
+        "type": "method",
+        "signature": "def _get_sha256(full_path: str) -> str:",
+        "start_line": 230,
+        "end_line": 235
+      }
+    ]
+  },
+  "src\\aria\\world\\__init__.py": {
+    "sha256": "0ba5318d03ae8475f6b763c011bdf588eae7d032c9c9d090b399f779572b620f",
+    "symbols": []
+  }
+}
