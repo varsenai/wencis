@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Pytest / Coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.hypothesis/
+
+# Environments & Private API Secrets
+.env
+.env.*
+*.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+test_env/
+
+# Databases
+*.db
+*.sqlite3
+*.sqlite
+*.sqlitedb
+
+# Cryptographic Keys and Certificates
+*.pem
+*.key
+*.pub
+*.crt
+*.p12
+*.pfx
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Project-Specific Audit & Prompt Files
+AUDIT_PROMPT.md
+remove_kinthic.py
+rename_blueprint.py
+
+# System & Agent configuration files
+.agents/
+.gemini/
+.system_generated/
