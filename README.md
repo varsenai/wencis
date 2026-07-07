@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="assets/wencis_logo.svg" alt="Wencis Logo" width="600px"/>
+  <img src="assets/wencis_logo.svg" alt="Wencis Logo" width="300px"/>
 </p>
+
 
 
 # Wencis
