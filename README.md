@@ -2,6 +2,13 @@
   <img src="assets/wencis_logo.svg" alt="Wencis Logo" width="600px"/>
 </p>
 
+<p align="center">
+  <a href="https://colab.research.google.com/drive/1XxSAn0LEkFBKXTQSrWuEJmcMkLhvrbwR?usp=sharing">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+  </a>
+</p>
+
+
 
 
 
