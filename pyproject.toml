@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "wencis"
-version = "0.1.0"
+version = "0.1.1"
 description = "Epistemic reasoning engine for AI agents — causal debugging, trajectory optimization, and self-improvement"
 readme = "README.md"
 license = { text = "Apache-2.0" }

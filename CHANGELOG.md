@@ -5,9 +5,15 @@ All notable changes to the Wencis project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-07-08
+
+### Added
+- **Interactive Sandbox**: Created and integrated a live Google Colab quickstart notebook badge in `README.md` for zero-setup execution.
+
 ---
 
 ## [0.1.0] - 2026-07-07
+
 
 ### Added
 - **Causal Knowledge Graph**: Implemented an async epistemic graph tracker (`CausalKnowledgeGraph`) supporting `decision`, `hypothesis`, `fact`, and `dead_end` node types.
