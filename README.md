@@ -8,6 +8,11 @@
   </a>
 </p>
 
+<p align="center">
+  <strong>⭐️ If Wencis helped you debug your agent, please star the repository! It helps others discover the project. ⭐️</strong>
+</p>
+
+
 
 
 
